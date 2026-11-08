@@ -4,13 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>GitHub Pages 站点总览 · zrx-11</title>
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23F1F2EC'/%3E%3Crect x='6' y='8' width='8' height='7' fill='%231F4B3F'/%3E%3Crect x='18' y='8' width='8' height='7' fill='%231F4B3F' opacity='.45'/%3E%3Crect x='6' y='18' width='8' height='7' fill='%231F4B3F' opacity='.45'/%3E%3Crect x='18' y='18' width='8' height='7' fill='%231F4B3F'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23F3F4EE'/%3E%3Crect x='6' y='8' width='8' height='7' fill='%231F4B3F'/%3E%3Crect x='18' y='8' width='8' height='7' fill='%231F4B3F' opacity='.45'/%3E%3Crect x='6' y='18' width='8' height='7' fill='%231F4B3F' opacity='.45'/%3E%3Crect x='18' y='18' width='8' height='7' fill='%231F4B3F'/%3E%3C/svg%3E">
 <style>
 :root{
-  --paper:#F1F2EC; --paper-2:#E7E9E0; --paper-3:#DDE0D4;
-  --ink:#171B18; --ink-2:#4E574F; --ink-3:#7C856F;
-  --line:#C5CAB9; --line-2:#AEB5A2;
-  --pine:#1F4B3F; --amber:#9A6D18; --rose:#8C3A34;
+  --paper:#F3F4EE; --card:#FCFCF7; --wash:#E8EADE;
+  --ink:#171B18; --ink-2:#4A544C; --ink-3:#78826E;
+  --line:#D2D7C7; --line-2:#B7BFAC;
+  --pine:#1F4B3F; --pine-soft:#2C6353;
+  --amber:#96690F; --rose:#8A3A33;
   --serif:"Songti SC","Noto Serif SC","Source Han Serif SC",STSong,SimSun,serif;
   --sans:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
   --mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;
@@ -18,130 +19,156 @@
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
 body{
-  margin:0; background:var(--paper); color:var(--ink);
-  font-family:var(--sans); font-size:15px; line-height:1.55;
-  background-image:linear-gradient(to bottom,rgba(31,75,63,.05),transparent 420px);
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--sans);font-size:15px;line-height:1.6;
+  background-image:radial-gradient(1200px 420px at 50% -160px,rgba(31,75,63,.07),transparent 70%);
 }
-.wrap{max-width:1180px;margin:0 auto;padding:0 18px 64px}
 a{color:var(--pine);text-decoration:none}
-a:hover{text-decoration:underline;text-underline-offset:3px}
+a:hover{text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
 .mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px 72px}
 
-/* ---------- 顶部 ---------- */
-.top{display:flex;flex-wrap:wrap;gap:8px 16px;justify-content:space-between;
-  padding:14px 0 12px;border-bottom:1px solid var(--line-2);
-  font-family:var(--mono);font-size:12px;letter-spacing:.04em;color:var(--ink-2)}
-.top .mark{color:var(--ink)}
-.top .mark b{font-weight:600}
+/* 顶部 */
+.top{display:flex;flex-wrap:wrap;gap:6px 20px;justify-content:space-between;
+  padding:16px 0 14px;border-bottom:1px solid var(--line-2);
+  font-family:var(--mono);font-size:11.5px;letter-spacing:.05em;color:var(--ink-3);text-transform:none}
+.top b{color:var(--ink);font-weight:600;letter-spacing:.02em}
 
-/* ---------- 导语 ---------- */
-.lead{padding:44px 0 28px;display:grid;gap:26px}
-@media (min-width:900px){.lead{grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);align-items:end;gap:40px}}
-h1{font-family:var(--serif);font-weight:600;font-size:clamp(34px,7vw,58px);
-  line-height:1.06;margin:0;letter-spacing:-.01em}
-.lede{margin:16px 0 0;max-width:34em;font-size:15px;color:var(--ink-2)}
-.lede strong{color:var(--ink);font-weight:600}
+/* 导语 */
+.lead{padding:52px 0 8px}
+h1{font-family:var(--serif);font-weight:600;font-size:clamp(38px,7.5vw,64px);
+  line-height:1.04;margin:0;letter-spacing:.01em}
+.lede{margin:20px 0 0;max-width:33em;font-size:15.5px;color:var(--ink-2);line-height:1.85}
+.lede em{font-style:normal;color:var(--ink);font-weight:600;
+  box-shadow:inset 0 -2px 0 rgba(31,75,63,.18)}
 
-/* ---------- 数字 ---------- */
-.figures{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;
-  background:var(--line);border:1px solid var(--line)}
-@media (min-width:620px){.figures{grid-template-columns:repeat(4,minmax(0,1fr))}}
-.fig{background:var(--paper);padding:14px 14px 12px}
-.fig dt{font-size:12px;color:var(--ink-3);letter-spacing:.02em;margin:0 0 6px}
-.fig dd{margin:0;font-family:var(--mono);font-size:clamp(24px,4.6vw,32px);line-height:1;font-weight:600}
-.fig dd small{font-size:12px;font-weight:400;color:var(--ink-3);margin-left:3px}
+/* 数字条 */
+.figures{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0;
+  margin:30px 0 0;border-top:1px solid var(--line-2);border-bottom:1px solid var(--line-2)}
+@media (min-width:640px){.figures{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.fig{padding:18px 4px 16px;border-right:1px solid var(--line)}
+.fig:last-child{border-right:0}
+@media (max-width:639px){
+  .fig{padding:16px 10px 14px}
+  .fig:nth-child(2){border-right:0}
+  .fig:nth-child(n+3){border-top:1px solid var(--line)}
+}
+.fig dt{font-size:11.5px;color:var(--ink-3);margin:0 0 8px;letter-spacing:.06em}
+.fig dd{margin:0;font-family:var(--mono);font-weight:600;line-height:1;
+  font-size:clamp(26px,5.2vw,36px)}
+.fig dd small{font-size:12px;font-weight:400;color:var(--ink-3);margin-left:4px;letter-spacing:0}
 
-/* ---------- 矩阵 ---------- */
-.matrix-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;
-  margin:40px 0 12px;border-bottom:1px solid var(--line-2);padding-bottom:8px}
-.matrix-head h2{margin:0;font-family:var(--serif);font-size:19px;font-weight:600}
-.matrix-head span{font-family:var(--mono);font-size:12px;color:var(--ink-3)}
-.matrix{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}
-@media (min-width:700px){.matrix{grid-template-columns:repeat(7,minmax(0,1fr))}}
+/* 区块标题 */
+.sec{margin-top:46px}
+.sec-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 14px;
+  padding-bottom:9px;margin-bottom:16px;border-bottom:1px solid var(--line-2)}
+.sec-head h2{margin:0;font-family:var(--serif);font-size:20px;font-weight:600;letter-spacing:.02em}
+.sec-head p{margin:0;font-size:12.5px;color:var(--ink-3);line-height:1.5}
+.alert{margin:0 0 18px;padding:11px 14px;border-left:3px solid var(--rose);
+  background:#F0E8E5;font-size:13px;color:#5A2F2A;line-height:1.6}
+.alert.quiet{border-left-color:var(--pine);background:#E5EBE0;color:#20463B}
+
+/* 矩阵 */
+.matrix{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px}
+@media (min-width:720px){.matrix{grid-template-columns:repeat(7,minmax(0,1fr))}}
 .cell{position:relative;display:flex;flex-direction:column;justify-content:space-between;
-  min-height:74px;padding:7px 8px 9px;background:var(--paper-2);
-  border:1px solid var(--line-2);color:var(--ink);overflow:hidden;transition:background .15s,border-color .15s,transform .15s}
-.cell:hover{background:#fff;border-color:var(--pine);text-decoration:none;transform:translateY(-1px)}
-.cell-idx{font-family:var(--mono);font-size:10px;color:var(--ink-3);letter-spacing:.05em}
-.cell-name{font-family:var(--mono);font-size:11px;line-height:1.3;word-break:break-all;color:var(--ink);min-width:0}
+  min-height:82px;padding:8px 9px 11px;background:var(--wash);
+  border:1px solid transparent;color:var(--ink);overflow:hidden;
+  transition:background .16s,border-color .16s,transform .16s}
+.cell:hover{background:#fff;border-color:var(--pine);text-decoration:none;transform:translateY(-2px)}
+.cell-idx{font-family:var(--mono);font-size:10px;color:var(--ink-3);letter-spacing:.06em}
+.cell-name{font-family:var(--mono);font-size:11px;line-height:1.35;word-break:break-word;
+  color:var(--ink);min-width:0;margin:2px 0 auto}
 .cell-meta{font-family:var(--mono);font-size:10px;color:var(--ink-3)}
-.cell-bar{position:absolute;left:0;bottom:0;height:3px;width:var(--w,0%);
-  background:var(--pine);opacity:.85}
-.cell-off{background:repeating-linear-gradient(135deg,var(--paper-3) 0 5px,var(--paper-2) 5px 10px);
-  border-style:dashed;color:var(--ink-3)}
-.cell-off .cell-name{color:var(--ink-2)}
-.cell-off .cell-bar{display:none}
+.cell-meta::before{content:"近7天 ";font-family:var(--sans);letter-spacing:0}
+.cell-bar{position:absolute;left:0;bottom:0;height:2px;width:var(--w,0%);background:var(--pine)}
+.cell.on .cell-name{color:var(--pine)}
+.cell.off{background:repeating-linear-gradient(135deg,#E2E4D7 0 6px,#EDEEE3 6px 12px);
+  border-color:var(--line);color:var(--ink-2)}
+.cell.off .cell-name{color:var(--ink-2);opacity:.8}
+.cell.off .cell-bar,.cell.off .cell-meta{display:none}
 
-/* ---------- 区块 ---------- */
-section{padding-top:40px}
-.sec-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px;
-  border-bottom:1px solid var(--line-2);padding-bottom:8px;margin-bottom:14px}
-.sec-head h2{margin:0;font-family:var(--serif);font-size:19px;font-weight:600}
-.sec-head p{margin:0;font-size:12.5px;color:var(--ink-3)}
-.alert{margin:0 0 16px;padding:10px 12px;border-left:3px solid var(--rose);
-  background:#EFE7E4;font-size:13px;color:#5B2F2B}
-.alert.quiet{border-left-color:var(--pine);background:#E4E9E1;color:#21453B}
-
-/* ---------- 控件 ---------- */
-.controls{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:12px}
-.search{flex:1 1 220px;min-width:0;position:relative}
-.search input{width:100%;font:inherit;font-size:16px;padding:9px 12px;background:#fff;
+/* 记录 */
+.controls{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:6px}
+.search{flex:1 1 230px;min-width:0;position:relative}
+.search input{width:100%;font:inherit;font-size:16px;padding:10px 13px;background:#fff;
   border:1px solid var(--line-2);border-radius:0;color:var(--ink)}
 .search input:focus{outline:2px solid var(--pine);outline-offset:1px}
+.search input::placeholder{color:var(--ink-3)}
 .chips{display:flex;flex-wrap:wrap;gap:6px}
-.chip{font:inherit;font-size:12.5px;padding:7px 11px;min-height:34px;cursor:pointer;
-  background:transparent;border:1px solid var(--line-2);color:var(--ink-2)}
+.chip{font:inherit;font-size:12.5px;padding:8px 12px;min-height:36px;cursor:pointer;
+  background:transparent;border:1px solid var(--line-2);color:var(--ink-2);transition:.15s}
+.chip:hover{border-color:var(--pine);color:var(--pine)}
 .chip[aria-pressed="true"]{background:var(--pine);border-color:var(--pine);color:#F4F6F1}
 .chip:focus-visible{outline:2px solid var(--pine);outline-offset:2px}
 
-/* ---------- 表格 ---------- */
-.table-scroll{overflow-x:auto;border-top:1px solid var(--line-2)}
-table{width:100%;border-collapse:collapse;table-layout:fixed;min-width:660px;font-size:13.5px}
-colgroup col.c1{width:30%} colgroup col.c2{width:26%} colgroup col.c3{width:11%}
-colgroup col.c4{width:12%} colgroup col.c5{width:7%} colgroup col.c6{width:14%}
-thead th{text-align:left;font-weight:500;font-size:12px;color:var(--ink-3);
-  padding:8px 8px;border-bottom:1px solid var(--line);white-space:nowrap}
-tbody td{padding:9px 8px;border-bottom:1px solid var(--line);vertical-align:top}
-tbody tr:hover{background:#FBFAF4}
-.col-name a{font-family:var(--mono);font-size:13px;word-break:break-all;display:block;min-width:0}
-.desc{display:block;margin-top:3px;font-size:12px;line-height:1.45;color:var(--ink-2);letter-spacing:0}
-.col-addr .mono{font-size:12px;color:var(--ink-2);word-break:break-all}
-.col-dep .mono{font-size:12px;color:var(--ink-2)}
-.col-time .mono,.col-commit .mono{font-size:12.5px;color:var(--ink-2)}
-.tag{display:inline-block;font-family:var(--mono);font-size:10.5px;line-height:1.6;
-  padding:1px 5px;border:1px solid var(--line-2);color:var(--ink-2);margin:0 4px 3px 0}
-.tag.ok{border-color:#9FB79E;color:#25503F;background:#E6EDE3}
-.tag.warn{border-color:#C9A469;color:#6E4B10;background:#F0E7D6}
+.records{margin-top:8px}
+.rec{display:grid;grid-template-columns:26px minmax(0,1fr);gap:0 12px;
+  padding:16px 0 15px;border-bottom:1px solid var(--line);align-items:start}
+@media (min-width:760px){.rec{grid-template-columns:30px minmax(0,1fr) 122px;gap:0 18px}}
+.rec:hover{background:rgba(255,255,255,.5)}
+.rec-idx{font-family:var(--mono);font-size:11px;color:var(--ink-3);padding-top:5px;letter-spacing:.04em}
+.rec-body{min-width:0}
+.rec-name{margin:0;font-size:0}
+.rec-name a{font-family:var(--mono);font-size:14.5px;font-weight:600;letter-spacing:.01em;
+  color:var(--ink);word-break:break-word;display:inline-block;line-height:1.4}
+.rec-name a:hover{color:var(--pine)}
+.rec-desc{margin:5px 0 0;font-size:13.5px;line-height:1.65;color:var(--ink-2);max-width:58em}
+.rec-meta{margin:8px 0 0;font-size:12px;color:var(--ink-3);line-height:1.7;
+  display:flex;flex-wrap:wrap;align-items:center;gap:2px 8px}
+.rec-meta a{font-size:12px;color:var(--ink-2)}
+.rec-meta a:hover{color:var(--pine)}
+.rec-meta b{font-weight:500;color:var(--ink-2);font-family:var(--mono)}
+.sep{color:var(--line-2)}
+@media (max-width:759px){.sep{display:none}.rec-meta{gap:2px 12px}}
+.rec-state{display:flex;flex-wrap:wrap;gap:5px;align-items:center;padding-top:3px}
+@media (max-width:759px){.rec-state{grid-column:2;margin-top:8px}}
+.tag{display:inline-block;font-family:var(--mono);font-size:10.5px;line-height:1.7;
+  padding:1px 6px;border:1px solid var(--line-2);color:var(--ink-2);white-space:nowrap}
+.tag.ok{border-color:#A3BAA1;color:#224D3D;background:#E6EDE3}
+.tag.warn{border-color:#C9A469;color:#6B4810;background:#F0E7D6}
 .tag.dim{color:var(--ink-3)}
+.rec-state time{font-size:11.5px;color:var(--ink-3);width:100%}
+@media (max-width:759px){.rec-state time{width:auto}}
+@media (min-width:760px){.rec-state{flex-direction:column;align-items:flex-end}}
+@media (min-width:760px){.rec-state .tag{align-self:flex-end}}
+#no-hit{display:none;padding:22px 0;color:var(--ink-3);font-size:13.5px}
 
-/* ---------- 活动条 ---------- */
-.bars{display:grid;gap:6px;margin-top:4px}
-.bar-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr) 26px;
-  gap:10px;align-items:center;padding:4px 0;border-bottom:1px dotted var(--line)}
-.bar-name{font-size:11.5px;color:var(--ink);word-break:break-all;min-width:0}
-.bar-track{display:block;height:7px;background:var(--paper-3)}
-.bar-fill{display:block;height:7px;background:var(--pine);opacity:.85}
-.bar-val{font-size:12px;text-align:right;color:var(--ink-2)}
-
-/* ---------- 未部署 ---------- */
-.rest{list-style:none;margin:0;padding:0;display:grid;gap:0}
-.rest li{display:flex;flex-wrap:wrap;gap:4px 12px;align-items:baseline;
-  padding:9px 0;border-bottom:1px solid var(--line)}
-.rest a{font-size:13px}
-.rest-desc{font-size:12.5px;color:var(--ink-2);flex:1 1 260px;min-width:0}
-.rest-note{font-size:12px;color:var(--ink-3)}
-.empty{color:var(--ink-3);font-size:13px}
-
-/* ---------- 页脚 ---------- */
-.notes{margin-top:48px;padding-top:14px;border-top:1px solid var(--line-2);
-  font-size:12px;color:var(--ink-3);line-height:1.7}
-.notes b{color:var(--ink-2);font-weight:500}
-@media (max-width:520px){
-  body{font-size:14.5px}
-  .wrap{padding:0 14px 48px}
-  table{min-width:600px}
+/* 活动条 */
+.bars{display:grid;gap:2px;margin-top:6px}
+.bar-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.5fr) 26px;
+  gap:12px;align-items:center;padding:6px 0;border-bottom:1px dotted var(--line)}
+.bar-name{font-size:12px;color:var(--ink);word-break:break-all;min-width:0}
+.bar-track{display:block;height:6px;background:var(--wash)}
+.bar-fill{display:block;height:6px;background:var(--pine-soft)}
+.bar-val{font-size:12.5px;text-align:right;color:var(--ink-2)}
+@media (max-width:560px){
   .bar-row{grid-template-columns:minmax(0,1fr) 26px}
   .bar-track{grid-column:1 / -1;order:3}
+}
+
+/* 未开站 */
+.rest{list-style:none;margin:0;padding:0}
+.rest li{display:grid;grid-template-columns:minmax(0,1fr);gap:3px;
+  padding:14px 0;border-bottom:1px solid var(--line)}
+@media (min-width:720px){.rest li{grid-template-columns:170px minmax(0,1fr) auto;
+  gap:0 18px;align-items:baseline}}
+.rname{font-size:13.5px;font-weight:600;color:var(--ink);word-break:break-all}
+.rdesc{font-size:13px;color:var(--ink-2)}
+.rnote{font-size:11.5px;color:var(--ink-3);white-space:nowrap}
+@media (max-width:719px){.rnote{white-space:normal}}
+.empty{color:var(--ink-3);font-size:13px}
+
+/* 页脚 */
+.notes{margin-top:52px;padding-top:16px;border-top:1px solid var(--line-2);
+  font-size:12px;color:var(--ink-3);line-height:1.85}
+.notes b{color:var(--ink-2);font-weight:600}
+.notes p{margin:0 0 6px}
+@media (max-width:520px){
+  body{font-size:14.5px}
+  .wrap{padding:0 15px 56px}
+  .lead{padding:38px 0 6px}
+  .rec{padding:14px 0}
 }
 @media (prefers-reduced-motion:reduce){.cell{transition:none}}
 </style>
@@ -150,154 +177,146 @@ tbody tr:hover{background:#FBFAF4}
 <div class="wrap">
 
   <header class="top">
-    <div class="mark"><b>zrx-11</b> · GitHub Pages 索引</div>
-    <div>抓取于 2026-11-09 01:20（周一，UTC+8）</div>
+    <div><b>zrx-11</b> · GitHub Pages 站点总览</div>
+    <div>抓取于 2026-11-09 01:22（周一，UTC+8）</div>
   </header>
 
   <div class="lead">
-    <div>
-      <h1>站点总览</h1>
-      <p class="lede">名下 <strong>44</strong> 个仓库中，<strong>41</strong> 个已发布为 GitHub Pages 站点，
-      全部构建成功并可访问。最近一次部署发生在 <strong>2026-11-09 01:17</strong>，
-      过去 7 天这些站点共收到 <strong>60</strong> 次提交。剩下的 3 个仓库尚未开站。</p>
-    </div>
+    <h1>站点总览</h1>
+    <p class="lede">名下共 44 个仓库，其中 <em>41 个已发布为站点</em>，构建全部成功、全部可以打开。
+    最近一次部署在 2026-11-09 01:21；过去七天这些站点收到 61 次提交，27 个仓库有改动，
+    14 个一动不动。还没开站的是 3 个。</p>
     <dl class="figures">
-      <div class="fig"><dt>已建站仓库</dt><dd>41<small>/ 44</small></dd></div>
+      <div class="fig"><dt>已建站</dt><dd>41<small>/ 44</small></dd></div>
       <div class="fig"><dt>覆盖率</dt><dd>93<small>%</small></dd></div>
       <div class="fig"><dt>可访问</dt><dd>41<small>/ 41</small></dd></div>
-      <div class="fig"><dt>近 7 天提交</dt><dd>60</dd></div>
+      <div class="fig"><dt>近 7 天提交</dt><dd>61</dd></div>
     </dl>
   </div>
 
-  <div class="matrix-head">
-    <h2>站点矩阵</h2>
-    <span>41 个站点 · 斜纹为未开站 · 右下细条长度=近 7 天提交数（满格 5 次）</span>
-  </div>
-  <div class="matrix" id="matrix">
-<a class="cell" href="https://zrx-11.github.io/pages-index/" target="_blank" rel="noopener" title="zrx-11/pages-index｜本页自身：全部仓库的 Pages 索引与部署状态｜已部署｜最近构建 2026-11-09 01:17｜近7天 4 次提交" data-name="pages-index"><span class="cell-idx">01</span><span class="cell-name">pages-index</span><span class="cell-meta">4</span><span class="cell-bar" style="--w:80%"></span></a>
-<a class="cell" href="https://zrx-11.github.io/algorithm-enlighten/" target="_blank" rel="noopener" title="zrx-11/algorithm-enlighten｜四本算法书点化学习系统｜已部署｜最近构建 2026-11-09 01:16｜近7天 5 次提交" data-name="algorithm-enlighten"><span class="cell-idx">02</span><span class="cell-name">algorithm-enlighten</span><span class="cell-meta">5</span><span class="cell-bar" style="--w:100%"></span></a>
-<a class="cell" href="https://zrx-11.github.io/cpu-enlighten/" target="_blank" rel="noopener" title="zrx-11/cpu-enlighten｜CPU通识课点化学习系统：38章精讲 + 交互总入口｜已部署｜最近构建 2026-11-09 01:16｜近7天 5 次提交" data-name="cpu-enlighten"><span class="cell-idx">03</span><span class="cell-name">cpu-enlighten</span><span class="cell-meta">5</span><span class="cell-bar" style="--w:100%"></span></a>
-<a class="cell" href="https://zrx-11.github.io/book-enlighten/" target="_blank" rel="noopener" title="zrx-11/book-enlighten｜点化书籍为学习系统的技能｜已部署｜最近构建 2026-11-09 01:10｜近7天 2 次提交" data-name="book-enlighten"><span class="cell-idx">04</span><span class="cell-name">book-enlighten</span><span class="cell-meta">2</span><span class="cell-bar" style="--w:40%"></span></a>
-<a class="cell" href="https://zrx-11.github.io/ai-ml-dl-rl-enlighten/" target="_blank" rel="noopener" title="zrx-11/ai-ml-dl-rl-enlighten｜五本 AI/ML/DL/RL 教材点化学习系统：AIMA 4e 为骨架，串联周志华、深度学习入门、动手学深度学习、Sutton 强化学习；含三页从零推导｜已部署｜最近构建 2026-11-09 01:02｜近7天 3 次提交" data-name="ai-ml-dl-rl-enlighten"><span class="cell-idx">05</span><span class="cell-name">ai-ml-dl-rl-enlighten</span><span class="cell-meta">3</span><span class="cell-bar" style="--w:60%"></span></a>
-<a class="cell" href="https://zrx-11.github.io/math-basics-enlighten/" target="_blank" rel="noopener" title="zrx-11/math-basics-enlighten｜24 本扫描版数学读物做成的可开学知识库｜已部署｜最近构建 2026-11-09 00:45｜近7天 3 次提交" data-name="math-basics-enlighten"><span class="cell-idx">06</span><span class="cell-name">math-basics-enlighten</span><span class="cell-meta">3</span><span class="cell-bar" style="--w:60%"></span></a>
-<a class="cell" href="https://zrx-11.github.io/probability-statistics/" target="_blank" rel="noopener" title="zrx-11/probability-statistics｜《概率统计》课件前三章改写的从零推导交互页，27 章｜已部署｜最近构建 2026-11-09 00:39｜近7天 1 次提交" data-name="probability-statistics"><span class="cell-idx">07</span><span class="cell-name">probability-statistics</span><span class="cell-meta">1</span><span class="cell-bar" style="--w:20%"></span></a>
-<a class="cell" href="https://zrx-11.github.io/first-principles-derivation/" target="_blank" rel="noopener" title="zrx-11/first-principles-derivation｜「从零推导」方法说明：把知识逆推到初中数学逐层重建｜已部署｜最近构建 2026-11-09 00:39｜近7天 1 次提交" data-name="first-principles-derivation"><span class="cell-idx">08</span><span class="cell-name">first-principles-derivation</span><span class="cell-meta">1</span><span class="cell-bar" style="--w:20%"></span></a>
-<a class="cell" href="https://zrx-11.github.io/additive-combinatorics-enlighten/" target="_blank" rel="noopener" title="zrx-11/additive-combinatorics-enlighten｜Tao &amp; Vu《Additive Combinatorics》拆成的点化学习手册｜已部署｜最近构建 2026-11-09 00:39｜近7天 1 次提交" data-name="additive-combinatorics-enlighten"><span class="cell-idx">09</span><span class="cell-name">additive-combinatorics-enlighten</span><span class="cell-meta">1</span><span class="cell-bar" style="--w:20%"></span></a>
-<a class="cell" href="https://zrx-11.github.io/ode-enlighten/" target="_blank" rel="noopener" title="zrx-11/ode-enlighten｜七本常微分方程教材整合的知识库，总入口 index.html｜已部署｜最近构建 2026-11-09 00:36｜近7天 1 次提交" data-name="ode-enlighten"><span class="cell-idx">10</span><span class="cell-name">ode-enlighten</span><span class="cell-meta">1</span><span class="cell-bar" style="--w:20%"></span></a>
-<a class="cell" href="https://zrx-11.github.io/mathmap/" target="_blank" rel="noopener" title="zrx-11/mathmap｜数学知识全景地图：154 节点、256 依赖边、L0–L6 分阶，含 3D 视图｜已部署｜最近构建 2026-11-09 00:24｜近7天 2 次提交" data-name="mathmap"><span class="cell-idx">11</span><span class="cell-name">mathmap</span><span class="cell-meta">2</span><span class="cell-bar" style="--w:40%"></span></a>
-<a class="cell" href="https://zrx-11.github.io/agentic-design-patterns-handbook/" target="_blank" rel="noopener" title="zrx-11/agentic-design-patterns-handbook｜《智能体设计模式》305 页拆成 26 章精讲 + 测验与抽认卡｜已部署｜最近构建 2026-11-09 00:07｜近7天 2 次提交" data-name="agentic-design-patterns-handbook"><span class="cell-idx">12</span><span class="cell-name">agentic-design-patterns-handbook</span><span class="cell-meta">2</span><span class="cell-bar" style="--w:40%"></span></a>
-<a class="cell" href="https://zrx-11.github.io/math-competition-derivation/" target="_blank" rel="noopener" title="zrx-11/math-competition-derivation｜全国大学生数学竞赛：5 门从零推导课 + 五章总入口｜已部署｜最近构建 2026-11-09 00:05｜近7天 1 次提交" data-name="math-competition-derivation"><span class="cell-idx">13</span><span class="cell-name">math-competition-derivation</span><span class="cell-meta">1</span><span class="cell-bar" style="--w:20%"></span></a>
-<a class="cell" href="https://zrx-11.github.io/ai-enlighten/" target="_blank" rel="noopener" title="zrx-11/ai-enlighten｜两本 AI 书合成的学习系统，另附两份从零推导页｜已部署｜最近构建 2026-11-09 00:01｜近7天 1 次提交" data-name="ai-enlighten"><span class="cell-idx">14</span><span class="cell-name">ai-enlighten</span><span class="cell-meta">1</span><span class="cell-bar" style="--w:20%"></span></a>
-<a class="cell" href="https://zrx-11.github.io/discrete-geometry-enlighten/" target="_blank" rel="noopener" title="zrx-11/discrete-geometry-enlighten｜《离散几何处理与应用》351 页 → 9 章精讲 + 16 概念页｜已部署｜最近构建 2026-11-09 00:01｜近7天 1 次提交" data-name="discrete-geometry-enlighten"><span class="cell-idx">15</span><span class="cell-name">discrete-geometry-enlighten</span><span class="cell-meta">1</span><span class="cell-bar" style="--w:20%"></span></a>
-<a class="cell" href="https://zrx-11.github.io/combinatorial-optimization-game-theory/" target="_blank" rel="noopener" title="zrx-11/combinatorial-optimization-game-theory｜《组合优化与博弈论》→ 8 章精讲 + 4 个推导页｜已部署｜最近构建 2026-11-08 23:50｜近7天 5 次提交" data-name="combinatorial-optimization-game-theory"><span class="cell-idx">16</span><span class="cell-name">combinatorial-optimization-game-theory</span><span class="cell-meta">5</span><span class="cell-bar" style="--w:100%"></span></a>
-<a class="cell" href="https://zrx-11.github.io/taocp-enlighten/" target="_blank" rel="noopener" title="zrx-11/taocp-enlighten｜六本 TAOCP 中文扫描件整合成的一套知识库｜已部署｜最近构建 2026-11-08 23:44｜近7天 3 次提交" data-name="taocp-enlighten"><span class="cell-idx">17</span><span class="cell-name">taocp-enlighten</span><span class="cell-meta">3</span><span class="cell-bar" style="--w:60%"></span></a>
-<a class="cell" href="https://zrx-11.github.io/math-modeling-handbook/" target="_blank" rel="noopener" title="zrx-11/math-modeling-handbook｜数学建模五册：从零基础到交出一份合规竞赛论文｜已部署｜最近构建 2026-11-08 23:31｜近7天 2 次提交" data-name="math-modeling-handbook"><span class="cell-idx">18</span><span class="cell-name">math-modeling-handbook</span><span class="cell-meta">2</span><span class="cell-bar" style="--w:40%"></span></a>
-<a class="cell" href="https://zrx-11.github.io/first-push-enlighten/" target="_blank" rel="noopener" title="zrx-11/first-push-enlighten｜《第一推动丛书》11 册做成的一套知识库｜已部署｜最近构建 2026-11-08 23:28｜近7天 1 次提交" data-name="first-push-enlighten"><span class="cell-idx">19</span><span class="cell-name">first-push-enlighten</span><span class="cell-meta">1</span><span class="cell-bar" style="--w:20%"></span></a>
-<a class="cell" href="https://zrx-11.github.io/economics-principles-handbook/" target="_blank" rel="noopener" title="zrx-11/economics-principles-handbook｜曼昆《经济学原理》微观 22 章 + 宏观 14 章｜已部署｜最近构建 2026-11-08 23:28｜近7天 1 次提交" data-name="economics-principles-handbook"><span class="cell-idx">20</span><span class="cell-name">economics-principles-handbook</span><span class="cell-meta">1</span><span class="cell-bar" style="--w:20%"></span></a>
-<a class="cell" href="https://zrx-11.github.io/analysis-handbook/" target="_blank" rel="noopener" title="zrx-11/analysis-handbook｜Amann《分析 I·II·III》三卷 → 12 章精讲 + 概念页与测验｜已部署｜最近构建 2026-11-08 23:02｜近7天 2 次提交" data-name="analysis-handbook"><span class="cell-idx">21</span><span class="cell-name">analysis-handbook</span><span class="cell-meta">2</span><span class="cell-bar" style="--w:40%"></span></a>
-<a class="cell" href="https://zrx-11.github.io/gaokao-math/" target="_blank" rel="noopener" title="zrx-11/gaokao-math｜1952–2026 高考数学真题库：775 套试卷、20216 题的交互题库｜已部署｜最近构建 2026-11-08 22:36｜近7天 2 次提交" data-name="gaokao-math"><span class="cell-idx">22</span><span class="cell-name">gaokao-math</span><span class="cell-meta">2</span><span class="cell-bar" style="--w:40%"></span></a>
-<a class="cell" href="https://zrx-11.github.io/ODE/" target="_blank" rel="noopener" title="zrx-11/ODE｜杭电《常微分方程》前三章课件改写的从零推导长页｜已部署｜最近构建 2026-11-08 22:26｜近7天 2 次提交" data-name="ODE"><span class="cell-idx">23</span><span class="cell-name">ODE</span><span class="cell-meta">2</span><span class="cell-bar" style="--w:40%"></span></a>
-<a class="cell" href="https://zrx-11.github.io/MATH/" target="_blank" rel="noopener" title="zrx-11/MATH｜《什么是数学》《数学手册》《普林斯顿数学指南》三书合一，24 章｜已部署｜最近构建 2026-11-08 22:08｜近7天 3 次提交" data-name="MATH"><span class="cell-idx">24</span><span class="cell-name">MATH</span><span class="cell-meta">3</span><span class="cell-bar" style="--w:60%"></span></a>
-<a class="cell" href="https://zrx-11.github.io/show/" target="_blank" rel="noopener" title="zrx-11/show｜《观复文明·野史戏谈》二十幕动态叙事页｜已部署｜最近构建 2026-11-04 11:22｜近7天 3 次提交" data-name="show"><span class="cell-idx">25</span><span class="cell-name">show</span><span class="cell-meta">3</span><span class="cell-bar" style="--w:60%"></span></a>
-<a class="cell" href="https://zrx-11.github.io/MATLAB/" target="_blank" rel="noopener" title="zrx-11/MATLAB｜MATLAB 数学实验指导手册（食品专业版专科高等数学）｜已部署｜最近构建 2026-11-03 16:59｜近7天 2 次提交" data-name="MATLAB"><span class="cell-idx">26</span><span class="cell-name">MATLAB</span><span class="cell-meta">2</span><span class="cell-bar" style="--w:40%"></span></a>
-<a class="cell" href="https://zrx-11.github.io/shallowseek/" target="_blank" rel="noopener" title="zrx-11/shallowseek｜空壳仓库：只有 README，Pages 渲染出的是一张占位页｜已部署｜最近构建 2026-11-02 23:17｜近7天 1 次提交" data-name="shallowseek"><span class="cell-idx">27</span><span class="cell-name">shallowseek</span><span class="cell-meta">1</span><span class="cell-bar" style="--w:20%"></span></a>
-<a class="cell" href="https://zrx-11.github.io/C-true/" target="_blank" rel="noopener" title="zrx-11/C-true｜《C++ 从零基础到彻底吃透》20 章完整学习手册｜已部署｜最近构建 2026-11-01 22:17｜近7天 0 次提交" data-name="C-true"><span class="cell-idx">28</span><span class="cell-name">C-true</span><span class="cell-meta">0</span><span class="cell-bar" style="--w:0%"></span></a>
-<a class="cell" href="https://zrx-11.github.io/C-/" target="_blank" rel="noopener" title="zrx-11/C-｜《洛谷 300 题精析》按八篇重编的题解，每题附洛谷链接｜已部署｜最近构建 2026-11-01 22:10｜近7天 0 次提交" data-name="C-"><span class="cell-idx">29</span><span class="cell-name">C-</span><span class="cell-meta">0</span><span class="cell-bar" style="--w:0%"></span></a>
-<a class="cell" href="https://zrx-11.github.io/math-analysis/" target="_blank" rel="noopener" title="zrx-11/math-analysis｜华师大《数学分析》下册 18–20 章从零推导，11 章｜已部署｜最近构建 2026-10-30 22:41｜近7天 0 次提交" data-name="math-analysis"><span class="cell-idx">30</span><span class="cell-name">math-analysis</span><span class="cell-meta">0</span><span class="cell-bar" style="--w:0%"></span></a>
-<a class="cell" href="https://zrx-11.github.io/transformer/" target="_blank" rel="noopener" title="zrx-11/transformer｜Transformer 从初中数学推到专家水平的单文件交互页｜已部署｜最近构建 2026-10-30 10:34｜近7天 0 次提交" data-name="transformer"><span class="cell-idx">31</span><span class="cell-name">transformer</span><span class="cell-meta">0</span><span class="cell-bar" style="--w:0%"></span></a>
-<a class="cell" href="https://zrx-11.github.io/AI-courses/" target="_blank" rel="noopener" title="zrx-11/AI-courses｜斯坦福/MIT 20 门 AI 课程的档案与选课导航 + 术语大词典｜已部署｜最近构建 2026-10-26 21:33｜近7天 0 次提交" data-name="AI-courses"><span class="cell-idx">32</span><span class="cell-name">AI-courses</span><span class="cell-meta">0</span><span class="cell-bar" style="--w:0%"></span></a>
-<a class="cell" href="https://zrx-11.github.io/SVM/" target="_blank" rel="noopener" title="zrx-11/SVM｜支持向量机从零推导交互式学习页｜已部署｜最近构建 2026-10-22 19:04｜近7天 0 次提交" data-name="SVM"><span class="cell-idx">33</span><span class="cell-name">SVM</span><span class="cell-meta">0</span><span class="cell-bar" style="--w:0%"></span></a>
-<a class="cell" href="https://zrx-11.github.io/ACM-XCPC-Notes/" target="_blank" rel="noopener" title="zrx-11/ACM-XCPC-Notes｜11 个 ACM/XCPC 仓库的离线资料库：120 篇笔记、281 份讲义｜已部署｜最近构建 2026-10-21 11:05｜近7天 0 次提交" data-name="ACM-XCPC-Notes"><span class="cell-idx">34</span><span class="cell-name">ACM-XCPC-Notes</span><span class="cell-meta">0</span><span class="cell-bar" style="--w:0%"></span></a>
-<a class="cell" href="https://zrx-11.github.io/ai-history-site/" target="_blank" rel="noopener" title="zrx-11/ai-history-site｜AI 纪元通识站：发展史时间线、LLM/Agent/RAG 等 500+ 板块｜已部署｜最近构建 2026-10-21 10:38｜近7天 0 次提交" data-name="ai-history-site"><span class="cell-idx">35</span><span class="cell-name">ai-history-site</span><span class="cell-meta">0</span><span class="cell-bar" style="--w:0%"></span></a>
-<a class="cell" href="https://zrx-11.github.io/meeting-129600years/" target="_blank" rel="noopener" title="zrx-11/meeting-129600years｜「12.96 万年后你我还会相遇嘛」一次性交互叙事页｜已部署｜最近构建 2026-10-17 23:35｜近7天 0 次提交" data-name="meeting-129600years"><span class="cell-idx">36</span><span class="cell-name">meeting-129600years</span><span class="cell-meta">0</span><span class="cell-bar" style="--w:0%"></span></a>
-<a class="cell" href="https://zrx-11.github.io/matchcampus-demo/" target="_blank" rel="noopener" title="zrx-11/matchcampus-demo｜校配 MatchCampus 校园供需匹配平台的产品演示站｜已部署｜最近构建 2026-10-15 01:04｜近7天 0 次提交" data-name="matchcampus-demo"><span class="cell-idx">37</span><span class="cell-name">matchcampus-demo</span><span class="cell-meta">0</span><span class="cell-bar" style="--w:0%"></span></a>
-<a class="cell" href="https://zrx-11.github.io/AI-Study-Notes/" target="_blank" rel="noopener" title="zrx-11/AI-Study-Notes｜AI 机理研习讲义五册 126 讲，含推导、代码与思考题｜已部署｜最近构建 2026-10-14 23:02｜近7天 0 次提交" data-name="AI-Study-Notes"><span class="cell-idx">38</span><span class="cell-name">AI-Study-Notes</span><span class="cell-meta">0</span><span class="cell-bar" style="--w:0%"></span></a>
-<a class="cell" href="https://zrx-11.github.io/bws-bilingual-reader/" target="_blank" rel="noopener" title="zrx-11/bws-bilingual-reader｜Sullivan《Mathematical Writing》中英双语离线阅读器｜已部署｜最近构建 2026-10-14 22:46｜近7天 0 次提交" data-name="bws-bilingual-reader"><span class="cell-idx">39</span><span class="cell-name">bws-bilingual-reader</span><span class="cell-meta">0</span><span class="cell-bar" style="--w:0%"></span></a>
-<a class="cell" href="https://zrx-11.github.io/CourseVault-OfflineCourseMap/" target="_blank" rel="noopener" title="zrx-11/CourseVault-OfflineCourseMap｜名校公开课学习路径地图离线版，附链接核验记录｜已部署｜最近构建 2026-10-14 22:37｜近7天 0 次提交" data-name="CourseVault-OfflineCourseMap"><span class="cell-idx">40</span><span class="cell-name">CourseVault-OfflineCourseMap</span><span class="cell-meta">0</span><span class="cell-bar" style="--w:0%"></span></a>
-<a class="cell" href="https://zrx-11.github.io/love-page/" target="_blank" rel="noopener" title="zrx-11/love-page｜情侣纪念页模板：时光、里程碑、纪念日倒计时｜已部署｜最近构建 2026-08-19 02:52｜近7天 0 次提交" data-name="love-page"><span class="cell-idx">41</span><span class="cell-name">love-page</span><span class="cell-meta">0</span><span class="cell-bar" style="--w:0%"></span></a>
-<div class="cell cell-off" title="zrx-11/deepseek-harness｜DeepSeek 官方 agent harness，fork 自上游，未开 Pages｜未部署｜fork 仓库" data-name="deepseek-harness"><span class="cell-idx">42</span><span class="cell-name">deepseek-harness</span><span class="cell-meta">—</span><span class="cell-bar" style="--w:0%"></span></div>
-<div class="cell cell-off" title="zrx-11/Pake｜把任意网页打包成轻量桌面应用，fork 自上游，未开 Pages｜未部署｜fork 仓库" data-name="Pake"><span class="cell-idx">43</span><span class="cell-name">Pake</span><span class="cell-meta">—</span><span class="cell-bar" style="--w:0%"></span></div>
-<div class="cell cell-off" title="zrx-11/love｜私有仓库，无 README，未开 Pages｜未部署｜私有仓库" data-name="love"><span class="cell-idx">44</span><span class="cell-name">love</span><span class="cell-meta">—</span><span class="cell-bar" style="--w:0%"></span></div>
-  </div>
+  <section class="sec">
+    <div class="sec-head">
+      <h2>站点矩阵</h2>
+      <p>序号按最近构建排列；斜纹是未开站；格内数字为近 7 天提交数，底部细线越长提交越多</p>
+    </div>
+    <div class="matrix">
+<a class="cell on" href="https://zrx-11.github.io/pages-index/" target="_blank" rel="noopener" title="zrx-11/pages-index｜本页自身：全部仓库的 Pages 索引与部署状态｜已部署｜最近构建 2026-11-09 01:21｜近 7 天 5 次提交" data-name="pages-index"><span class="cell-idx">01</span><span class="cell-name">pages-index</span><span class="cell-meta">5</span><span class="cell-bar" style="--w:100%"></span></a>
+<a class="cell on" href="https://zrx-11.github.io/algorithm-enlighten/" target="_blank" rel="noopener" title="zrx-11/algorithm-enlighten｜四本算法书点化学习系统｜已部署｜最近构建 2026-11-09 01:16｜近 7 天 5 次提交" data-name="algorithm-enlighten"><span class="cell-idx">02</span><span class="cell-name">algorithm-enlighten</span><span class="cell-meta">5</span><span class="cell-bar" style="--w:100%"></span></a>
+<a class="cell on" href="https://zrx-11.github.io/cpu-enlighten/" target="_blank" rel="noopener" title="zrx-11/cpu-enlighten｜CPU通识课点化学习系统：38章精讲 + 交互总入口｜已部署｜最近构建 2026-11-09 01:16｜近 7 天 5 次提交" data-name="cpu-enlighten"><span class="cell-idx">03</span><span class="cell-name">cpu-enlighten</span><span class="cell-meta">5</span><span class="cell-bar" style="--w:100%"></span></a>
+<a class="cell on" href="https://zrx-11.github.io/book-enlighten/" target="_blank" rel="noopener" title="zrx-11/book-enlighten｜点化书籍为学习系统的技能｜已部署｜最近构建 2026-11-09 01:10｜近 7 天 2 次提交" data-name="book-enlighten"><span class="cell-idx">04</span><span class="cell-name">book-enlighten</span><span class="cell-meta">2</span><span class="cell-bar" style="--w:40%"></span></a>
+<a class="cell on" href="https://zrx-11.github.io/ai-ml-dl-rl-enlighten/" target="_blank" rel="noopener" title="zrx-11/ai-ml-dl-rl-enlighten｜五本 AI/ML/DL/RL 教材点化学习系统：AIMA 4e 为骨架，串联周志华、深度学习入门、动手学深度学习、Sutton 强化学习；含三页从零推导｜已部署｜最近构建 2026-11-09 01:02｜近 7 天 3 次提交" data-name="ai-ml-dl-rl-enlighten"><span class="cell-idx">05</span><span class="cell-name">ai-ml-dl-rl-enlighten</span><span class="cell-meta">3</span><span class="cell-bar" style="--w:60%"></span></a>
+<a class="cell on" href="https://zrx-11.github.io/math-basics-enlighten/" target="_blank" rel="noopener" title="zrx-11/math-basics-enlighten｜24 本扫描版数学读物做成的可开学知识库｜已部署｜最近构建 2026-11-09 00:45｜近 7 天 3 次提交" data-name="math-basics-enlighten"><span class="cell-idx">06</span><span class="cell-name">math-basics-enlighten</span><span class="cell-meta">3</span><span class="cell-bar" style="--w:60%"></span></a>
+<a class="cell on" href="https://zrx-11.github.io/probability-statistics/" target="_blank" rel="noopener" title="zrx-11/probability-statistics｜《概率统计》课件前三章改写的从零推导交互页，27 章｜已部署｜最近构建 2026-11-09 00:39｜近 7 天 1 次提交" data-name="probability-statistics"><span class="cell-idx">07</span><span class="cell-name">probability-statistics</span><span class="cell-meta">1</span><span class="cell-bar" style="--w:20%"></span></a>
+<a class="cell on" href="https://zrx-11.github.io/first-principles-derivation/" target="_blank" rel="noopener" title="zrx-11/first-principles-derivation｜「从零推导」方法说明：把知识逆推到初中数学逐层重建｜已部署｜最近构建 2026-11-09 00:39｜近 7 天 1 次提交" data-name="first-principles-derivation"><span class="cell-idx">08</span><span class="cell-name">first-principles-derivation</span><span class="cell-meta">1</span><span class="cell-bar" style="--w:20%"></span></a>
+<a class="cell on" href="https://zrx-11.github.io/additive-combinatorics-enlighten/" target="_blank" rel="noopener" title="zrx-11/additive-combinatorics-enlighten｜Tao &amp; Vu《Additive Combinatorics》拆成的点化学习手册｜已部署｜最近构建 2026-11-09 00:39｜近 7 天 1 次提交" data-name="additive-combinatorics-enlighten"><span class="cell-idx">09</span><span class="cell-name">additive-combinatorics-enlighten</span><span class="cell-meta">1</span><span class="cell-bar" style="--w:20%"></span></a>
+<a class="cell on" href="https://zrx-11.github.io/ode-enlighten/" target="_blank" rel="noopener" title="zrx-11/ode-enlighten｜七本常微分方程教材整合的知识库，总入口 index.html｜已部署｜最近构建 2026-11-09 00:36｜近 7 天 1 次提交" data-name="ode-enlighten"><span class="cell-idx">10</span><span class="cell-name">ode-enlighten</span><span class="cell-meta">1</span><span class="cell-bar" style="--w:20%"></span></a>
+<a class="cell on" href="https://zrx-11.github.io/mathmap/" target="_blank" rel="noopener" title="zrx-11/mathmap｜数学知识全景地图：154 节点、256 依赖边、L0–L6 分阶，含 3D 视图｜已部署｜最近构建 2026-11-09 00:24｜近 7 天 2 次提交" data-name="mathmap"><span class="cell-idx">11</span><span class="cell-name">mathmap</span><span class="cell-meta">2</span><span class="cell-bar" style="--w:40%"></span></a>
+<a class="cell on" href="https://zrx-11.github.io/agentic-design-patterns-handbook/" target="_blank" rel="noopener" title="zrx-11/agentic-design-patterns-handbook｜《智能体设计模式》305 页拆成 26 章精讲 + 测验与抽认卡｜已部署｜最近构建 2026-11-09 00:07｜近 7 天 2 次提交" data-name="agentic-design-patterns-handbook"><span class="cell-idx">12</span><span class="cell-name">agentic-design-patterns-handbook</span><span class="cell-meta">2</span><span class="cell-bar" style="--w:40%"></span></a>
+<a class="cell on" href="https://zrx-11.github.io/math-competition-derivation/" target="_blank" rel="noopener" title="zrx-11/math-competition-derivation｜全国大学生数学竞赛：5 门从零推导课 + 五章总入口｜已部署｜最近构建 2026-11-09 00:05｜近 7 天 1 次提交" data-name="math-competition-derivation"><span class="cell-idx">13</span><span class="cell-name">math-competition-derivation</span><span class="cell-meta">1</span><span class="cell-bar" style="--w:20%"></span></a>
+<a class="cell on" href="https://zrx-11.github.io/ai-enlighten/" target="_blank" rel="noopener" title="zrx-11/ai-enlighten｜两本 AI 书合成的学习系统，另附两份从零推导页｜已部署｜最近构建 2026-11-09 00:01｜近 7 天 1 次提交" data-name="ai-enlighten"><span class="cell-idx">14</span><span class="cell-name">ai-enlighten</span><span class="cell-meta">1</span><span class="cell-bar" style="--w:20%"></span></a>
+<a class="cell on" href="https://zrx-11.github.io/discrete-geometry-enlighten/" target="_blank" rel="noopener" title="zrx-11/discrete-geometry-enlighten｜《离散几何处理与应用》351 页 → 9 章精讲 + 16 概念页｜已部署｜最近构建 2026-11-09 00:01｜近 7 天 1 次提交" data-name="discrete-geometry-enlighten"><span class="cell-idx">15</span><span class="cell-name">discrete-geometry-enlighten</span><span class="cell-meta">1</span><span class="cell-bar" style="--w:20%"></span></a>
+<a class="cell on" href="https://zrx-11.github.io/combinatorial-optimization-game-theory/" target="_blank" rel="noopener" title="zrx-11/combinatorial-optimization-game-theory｜《组合优化与博弈论》→ 8 章精讲 + 4 个推导页｜已部署｜最近构建 2026-11-08 23:50｜近 7 天 5 次提交" data-name="combinatorial-optimization-game-theory"><span class="cell-idx">16</span><span class="cell-name">combinatorial-optimization-game-theory</span><span class="cell-meta">5</span><span class="cell-bar" style="--w:100%"></span></a>
+<a class="cell on" href="https://zrx-11.github.io/taocp-enlighten/" target="_blank" rel="noopener" title="zrx-11/taocp-enlighten｜六本 TAOCP 中文扫描件整合成的一套知识库｜已部署｜最近构建 2026-11-08 23:44｜近 7 天 3 次提交" data-name="taocp-enlighten"><span class="cell-idx">17</span><span class="cell-name">taocp-enlighten</span><span class="cell-meta">3</span><span class="cell-bar" style="--w:60%"></span></a>
+<a class="cell on" href="https://zrx-11.github.io/math-modeling-handbook/" target="_blank" rel="noopener" title="zrx-11/math-modeling-handbook｜数学建模五册：从零基础到交出一份合规竞赛论文｜已部署｜最近构建 2026-11-08 23:31｜近 7 天 2 次提交" data-name="math-modeling-handbook"><span class="cell-idx">18</span><span class="cell-name">math-modeling-handbook</span><span class="cell-meta">2</span><span class="cell-bar" style="--w:40%"></span></a>
+<a class="cell on" href="https://zrx-11.github.io/first-push-enlighten/" target="_blank" rel="noopener" title="zrx-11/first-push-enlighten｜《第一推动丛书》11 册做成的一套知识库｜已部署｜最近构建 2026-11-08 23:28｜近 7 天 1 次提交" data-name="first-push-enlighten"><span class="cell-idx">19</span><span class="cell-name">first-push-enlighten</span><span class="cell-meta">1</span><span class="cell-bar" style="--w:20%"></span></a>
+<a class="cell on" href="https://zrx-11.github.io/economics-principles-handbook/" target="_blank" rel="noopener" title="zrx-11/economics-principles-handbook｜曼昆《经济学原理》微观 22 章 + 宏观 14 章｜已部署｜最近构建 2026-11-08 23:28｜近 7 天 1 次提交" data-name="economics-principles-handbook"><span class="cell-idx">20</span><span class="cell-name">economics-principles-handbook</span><span class="cell-meta">1</span><span class="cell-bar" style="--w:20%"></span></a>
+<a class="cell on" href="https://zrx-11.github.io/analysis-handbook/" target="_blank" rel="noopener" title="zrx-11/analysis-handbook｜Amann《分析 I·II·III》三卷 → 12 章精讲 + 概念页与测验｜已部署｜最近构建 2026-11-08 23:02｜近 7 天 2 次提交" data-name="analysis-handbook"><span class="cell-idx">21</span><span class="cell-name">analysis-handbook</span><span class="cell-meta">2</span><span class="cell-bar" style="--w:40%"></span></a>
+<a class="cell on" href="https://zrx-11.github.io/gaokao-math/" target="_blank" rel="noopener" title="zrx-11/gaokao-math｜1952–2026 高考数学真题库：775 套试卷、20216 题的交互题库｜已部署｜最近构建 2026-11-08 22:36｜近 7 天 2 次提交" data-name="gaokao-math"><span class="cell-idx">22</span><span class="cell-name">gaokao-math</span><span class="cell-meta">2</span><span class="cell-bar" style="--w:40%"></span></a>
+<a class="cell on" href="https://zrx-11.github.io/ODE/" target="_blank" rel="noopener" title="zrx-11/ODE｜杭电《常微分方程》前三章课件改写的从零推导长页｜已部署｜最近构建 2026-11-08 22:26｜近 7 天 2 次提交" data-name="ODE"><span class="cell-idx">23</span><span class="cell-name">ODE</span><span class="cell-meta">2</span><span class="cell-bar" style="--w:40%"></span></a>
+<a class="cell on" href="https://zrx-11.github.io/MATH/" target="_blank" rel="noopener" title="zrx-11/MATH｜《什么是数学》《数学手册》《普林斯顿数学指南》三书合一，24 章｜已部署｜最近构建 2026-11-08 22:08｜近 7 天 3 次提交" data-name="MATH"><span class="cell-idx">24</span><span class="cell-name">MATH</span><span class="cell-meta">3</span><span class="cell-bar" style="--w:60%"></span></a>
+<a class="cell on" href="https://zrx-11.github.io/show/" target="_blank" rel="noopener" title="zrx-11/show｜《观复文明·野史戏谈》二十幕动态叙事页｜已部署｜最近构建 2026-11-04 11:22｜近 7 天 3 次提交" data-name="show"><span class="cell-idx">25</span><span class="cell-name">show</span><span class="cell-meta">3</span><span class="cell-bar" style="--w:60%"></span></a>
+<a class="cell on" href="https://zrx-11.github.io/MATLAB/" target="_blank" rel="noopener" title="zrx-11/MATLAB｜MATLAB 数学实验指导手册（食品专业版专科高等数学）｜已部署｜最近构建 2026-11-03 16:59｜近 7 天 2 次提交" data-name="MATLAB"><span class="cell-idx">26</span><span class="cell-name">MATLAB</span><span class="cell-meta">2</span><span class="cell-bar" style="--w:40%"></span></a>
+<a class="cell on" href="https://zrx-11.github.io/shallowseek/" target="_blank" rel="noopener" title="zrx-11/shallowseek｜空壳仓库：只有 README，Pages 渲染出的是一张占位页｜已部署｜最近构建 2026-11-02 23:17｜近 7 天 1 次提交" data-name="shallowseek"><span class="cell-idx">27</span><span class="cell-name">shallowseek</span><span class="cell-meta">1</span><span class="cell-bar" style="--w:20%"></span></a>
+<a class="cell" href="https://zrx-11.github.io/C-true/" target="_blank" rel="noopener" title="zrx-11/C-true｜《C++ 从零基础到彻底吃透》20 章完整学习手册｜已部署｜最近构建 2026-11-01 22:17｜近 7 天 0 次提交" data-name="C-true"><span class="cell-idx">28</span><span class="cell-name">C-true</span><span class="cell-meta">0</span><span class="cell-bar" style="--w:0%"></span></a>
+<a class="cell" href="https://zrx-11.github.io/C-/" target="_blank" rel="noopener" title="zrx-11/C-｜《洛谷 300 题精析》按八篇重编的题解，每题附洛谷链接｜已部署｜最近构建 2026-11-01 22:10｜近 7 天 0 次提交" data-name="C-"><span class="cell-idx">29</span><span class="cell-name">C-</span><span class="cell-meta">0</span><span class="cell-bar" style="--w:0%"></span></a>
+<a class="cell" href="https://zrx-11.github.io/math-analysis/" target="_blank" rel="noopener" title="zrx-11/math-analysis｜华师大《数学分析》下册 18–20 章从零推导，11 章｜已部署｜最近构建 2026-10-30 22:41｜近 7 天 0 次提交" data-name="math-analysis"><span class="cell-idx">30</span><span class="cell-name">math-analysis</span><span class="cell-meta">0</span><span class="cell-bar" style="--w:0%"></span></a>
+<a class="cell" href="https://zrx-11.github.io/transformer/" target="_blank" rel="noopener" title="zrx-11/transformer｜Transformer 从初中数学推到专家水平的单文件交互页｜已部署｜最近构建 2026-10-30 10:34｜近 7 天 0 次提交" data-name="transformer"><span class="cell-idx">31</span><span class="cell-name">transformer</span><span class="cell-meta">0</span><span class="cell-bar" style="--w:0%"></span></a>
+<a class="cell" href="https://zrx-11.github.io/AI-courses/" target="_blank" rel="noopener" title="zrx-11/AI-courses｜斯坦福/MIT 20 门 AI 课程的档案与选课导航 + 术语大词典｜已部署｜最近构建 2026-10-26 21:33｜近 7 天 0 次提交" data-name="AI-courses"><span class="cell-idx">32</span><span class="cell-name">AI-courses</span><span class="cell-meta">0</span><span class="cell-bar" style="--w:0%"></span></a>
+<a class="cell" href="https://zrx-11.github.io/SVM/" target="_blank" rel="noopener" title="zrx-11/SVM｜支持向量机从零推导交互式学习页｜已部署｜最近构建 2026-10-22 19:04｜近 7 天 0 次提交" data-name="SVM"><span class="cell-idx">33</span><span class="cell-name">SVM</span><span class="cell-meta">0</span><span class="cell-bar" style="--w:0%"></span></a>
+<a class="cell" href="https://zrx-11.github.io/ACM-XCPC-Notes/" target="_blank" rel="noopener" title="zrx-11/ACM-XCPC-Notes｜11 个 ACM/XCPC 仓库的离线资料库：120 篇笔记、281 份讲义｜已部署｜最近构建 2026-10-21 11:05｜近 7 天 0 次提交" data-name="ACM-XCPC-Notes"><span class="cell-idx">34</span><span class="cell-name">ACM-XCPC-Notes</span><span class="cell-meta">0</span><span class="cell-bar" style="--w:0%"></span></a>
+<a class="cell" href="https://zrx-11.github.io/ai-history-site/" target="_blank" rel="noopener" title="zrx-11/ai-history-site｜AI 纪元通识站：发展史时间线、LLM/Agent/RAG 等 500+ 板块｜已部署｜最近构建 2026-10-21 10:38｜近 7 天 0 次提交" data-name="ai-history-site"><span class="cell-idx">35</span><span class="cell-name">ai-history-site</span><span class="cell-meta">0</span><span class="cell-bar" style="--w:0%"></span></a>
+<a class="cell" href="https://zrx-11.github.io/meeting-129600years/" target="_blank" rel="noopener" title="zrx-11/meeting-129600years｜「12.96 万年后你我还会相遇嘛」一次性交互叙事页｜已部署｜最近构建 2026-10-17 23:35｜近 7 天 0 次提交" data-name="meeting-129600years"><span class="cell-idx">36</span><span class="cell-name">meeting-129600years</span><span class="cell-meta">0</span><span class="cell-bar" style="--w:0%"></span></a>
+<a class="cell" href="https://zrx-11.github.io/matchcampus-demo/" target="_blank" rel="noopener" title="zrx-11/matchcampus-demo｜校配 MatchCampus 校园供需匹配平台的产品演示站｜已部署｜最近构建 2026-10-15 01:04｜近 7 天 0 次提交" data-name="matchcampus-demo"><span class="cell-idx">37</span><span class="cell-name">matchcampus-demo</span><span class="cell-meta">0</span><span class="cell-bar" style="--w:0%"></span></a>
+<a class="cell" href="https://zrx-11.github.io/AI-Study-Notes/" target="_blank" rel="noopener" title="zrx-11/AI-Study-Notes｜AI 机理研习讲义五册 126 讲，含推导、代码与思考题｜已部署｜最近构建 2026-10-14 23:02｜近 7 天 0 次提交" data-name="AI-Study-Notes"><span class="cell-idx">38</span><span class="cell-name">AI-Study-Notes</span><span class="cell-meta">0</span><span class="cell-bar" style="--w:0%"></span></a>
+<a class="cell" href="https://zrx-11.github.io/bws-bilingual-reader/" target="_blank" rel="noopener" title="zrx-11/bws-bilingual-reader｜Sullivan《Mathematical Writing》中英双语离线阅读器｜已部署｜最近构建 2026-10-14 22:46｜近 7 天 0 次提交" data-name="bws-bilingual-reader"><span class="cell-idx">39</span><span class="cell-name">bws-bilingual-reader</span><span class="cell-meta">0</span><span class="cell-bar" style="--w:0%"></span></a>
+<a class="cell" href="https://zrx-11.github.io/CourseVault-OfflineCourseMap/" target="_blank" rel="noopener" title="zrx-11/CourseVault-OfflineCourseMap｜名校公开课学习路径地图离线版，附链接核验记录｜已部署｜最近构建 2026-10-14 22:37｜近 7 天 0 次提交" data-name="CourseVault-OfflineCourseMap"><span class="cell-idx">40</span><span class="cell-name">CourseVault-OfflineCourseMap</span><span class="cell-meta">0</span><span class="cell-bar" style="--w:0%"></span></a>
+<a class="cell" href="https://zrx-11.github.io/love-page/" target="_blank" rel="noopener" title="zrx-11/love-page｜情侣纪念页模板：时光、里程碑、纪念日倒计时｜已部署｜最近构建 2026-08-19 02:52｜近 7 天 0 次提交" data-name="love-page"><span class="cell-idx">41</span><span class="cell-name">love-page</span><span class="cell-meta">0</span><span class="cell-bar" style="--w:0%"></span></a>
+<div class="cell off" title="zrx-11/deepseek-harness｜DeepSeek 官方 agent harness，fork 自上游，未开 Pages｜未部署｜fork 仓库" data-name="deepseek-harness"><span class="cell-idx">42</span><span class="cell-name">deepseek-harness</span><span class="cell-meta">—</span><span class="cell-bar" style="--w:0%"></span></div>
+<div class="cell off" title="zrx-11/Pake｜把任意网页打包成轻量桌面应用，fork 自上游，未开 Pages｜未部署｜fork 仓库" data-name="Pake"><span class="cell-idx">43</span><span class="cell-name">Pake</span><span class="cell-meta">—</span><span class="cell-bar" style="--w:0%"></span></div>
+<div class="cell off" title="zrx-11/love｜私有仓库，无 README，未开 Pages｜未部署｜私有仓库" data-name="love"><span class="cell-idx">44</span><span class="cell-name">love</span><span class="cell-meta">—</span><span class="cell-bar" style="--w:0%"></span></div>
+    </div>
+  </section>
 
-  <section>
+  <section class="sec">
     <div class="sec-head">
       <h2>站点清单</h2>
-      <p>按最近一次构建时间倒序；仓库名下方是该仓库做什么的一句话说明；时间为北京时间</p>
+      <p>每条是一块记录：仓库名、做什么用、站点地址、部署源与最近构建状态</p>
     </div>
-    <p class="alert quiet">本次检查没有异常：所有站点构建成功，全部可访问。</p>
+    <p class="alert quiet">本次检查没有异常：所有站点构建成功，全部可以访问。</p>
     <div class="controls">
-      <div class="search"><input id="q" type="search" placeholder="搜索仓库名或地址…" aria-label="搜索仓库"></div>
+      <div class="search"><input id="q" type="search" placeholder="搜索仓库名、说明或地址…" aria-label="搜索仓库"></div>
       <div class="chips">
         <button class="chip" id="f-all" aria-pressed="true">全部</button>
         <button class="chip" id="f-active" aria-pressed="false">本周有更新</button>
         <button class="chip" id="f-silent" aria-pressed="false">本周无提交</button>
       </div>
     </div>
-    <div class="table-scroll">
-      <table>
-        <colgroup><col class="c1"><col class="c2"><col class="c3"><col class="c4"><col class="c5"><col class="c6"></colgroup>
-        <thead>
-          <tr><th>仓库</th><th>站点地址</th><th>部署源</th><th>最近构建</th><th>近7天</th><th>状态 / 访问</th></tr>
-        </thead>
-        <tbody id="rows">
-<tr data-name="pages-index" data-active="1"><td class="col-name"><a href="https://zrx-11.github.io/pages-index/" target="_blank" rel="noopener">pages-index</a><span class="desc">本页自身：全部仓库的 Pages 索引与部署状态</span></td><td class="col-addr"><span class="mono">zrx-11.github.io/pages-index/</span></td><td class="col-dep"><span class="mono">main:/</span></td><td class="col-time"><span class="mono">11-09 01:17</span></td><td class="col-commit"><span class="mono">4</span></td><td class="col-state"><span class="tag ok">构建成功</span><span class="tag ok">200</span></td></tr>
-<tr data-name="algorithm-enlighten" data-active="1"><td class="col-name"><a href="https://zrx-11.github.io/algorithm-enlighten/" target="_blank" rel="noopener">algorithm-enlighten</a><span class="desc">四本算法书点化学习系统</span></td><td class="col-addr"><span class="mono">zrx-11.github.io/algorithm-enlighten/</span></td><td class="col-dep"><span class="mono">main:/</span></td><td class="col-time"><span class="mono">11-09 01:16</span></td><td class="col-commit"><span class="mono">5</span></td><td class="col-state"><span class="tag ok">构建成功</span><span class="tag ok">200</span></td></tr>
-<tr data-name="cpu-enlighten" data-active="1"><td class="col-name"><a href="https://zrx-11.github.io/cpu-enlighten/" target="_blank" rel="noopener">cpu-enlighten</a><span class="desc">CPU通识课点化学习系统：38章精讲 + 交互总入口</span></td><td class="col-addr"><span class="mono">zrx-11.github.io/cpu-enlighten/</span></td><td class="col-dep"><span class="mono">main:/</span></td><td class="col-time"><span class="mono">11-09 01:16</span></td><td class="col-commit"><span class="mono">5</span></td><td class="col-state"><span class="tag ok">构建成功</span><span class="tag ok">200</span></td></tr>
-<tr data-name="book-enlighten" data-active="1"><td class="col-name"><a href="https://zrx-11.github.io/book-enlighten/" target="_blank" rel="noopener">book-enlighten</a><span class="desc">点化书籍为学习系统的技能</span></td><td class="col-addr"><span class="mono">zrx-11.github.io/book-enlighten/</span></td><td class="col-dep"><span class="mono">main:/</span></td><td class="col-time"><span class="mono">11-09 01:10</span></td><td class="col-commit"><span class="mono">2</span></td><td class="col-state"><span class="tag ok">构建成功</span><span class="tag ok">200</span></td></tr>
-<tr data-name="ai-ml-dl-rl-enlighten" data-active="1"><td class="col-name"><a href="https://zrx-11.github.io/ai-ml-dl-rl-enlighten/" target="_blank" rel="noopener">ai-ml-dl-rl-enlighten</a><span class="desc">五本 AI/ML/DL/RL 教材点化学习系统：AIMA 4e 为骨架，串联周志华、深度学习入门、动手学深度学习、Sutton 强化学习；含三页从零推导</span></td><td class="col-addr"><span class="mono">zrx-11.github.io/ai-ml-dl-rl-enlighten/</span></td><td class="col-dep"><span class="mono">main:/</span></td><td class="col-time"><span class="mono">11-09 01:02</span></td><td class="col-commit"><span class="mono">3</span></td><td class="col-state"><span class="tag ok">构建成功</span><span class="tag ok">200</span></td></tr>
-<tr data-name="math-basics-enlighten" data-active="1"><td class="col-name"><a href="https://zrx-11.github.io/math-basics-enlighten/" target="_blank" rel="noopener">math-basics-enlighten</a><span class="desc">24 本扫描版数学读物做成的可开学知识库</span></td><td class="col-addr"><span class="mono">zrx-11.github.io/math-basics-enlighten/</span></td><td class="col-dep"><span class="mono">main:/</span></td><td class="col-time"><span class="mono">11-09 00:45</span></td><td class="col-commit"><span class="mono">3</span></td><td class="col-state"><span class="tag ok">构建成功</span><span class="tag ok">200</span></td></tr>
-<tr data-name="probability-statistics" data-active="1"><td class="col-name"><a href="https://zrx-11.github.io/probability-statistics/" target="_blank" rel="noopener">probability-statistics</a><span class="desc">《概率统计》课件前三章改写的从零推导交互页，27 章</span></td><td class="col-addr"><span class="mono">zrx-11.github.io/probability-statistics/</span></td><td class="col-dep"><span class="mono">main:/</span></td><td class="col-time"><span class="mono">11-09 00:39</span></td><td class="col-commit"><span class="mono">1</span></td><td class="col-state"><span class="tag ok">构建成功</span><span class="tag ok">200</span></td></tr>
-<tr data-name="first-principles-derivation" data-active="1"><td class="col-name"><a href="https://zrx-11.github.io/first-principles-derivation/" target="_blank" rel="noopener">first-principles-derivation</a><span class="desc">「从零推导」方法说明：把知识逆推到初中数学逐层重建</span></td><td class="col-addr"><span class="mono">zrx-11.github.io/first-principles-derivation/</span></td><td class="col-dep"><span class="mono">main:/</span></td><td class="col-time"><span class="mono">11-09 00:39</span></td><td class="col-commit"><span class="mono">1</span></td><td class="col-state"><span class="tag ok">构建成功</span><span class="tag ok">200</span></td></tr>
-<tr data-name="additive-combinatorics-enlighten" data-active="1"><td class="col-name"><a href="https://zrx-11.github.io/additive-combinatorics-enlighten/" target="_blank" rel="noopener">additive-combinatorics-enlighten</a><span class="desc">Tao &amp; Vu《Additive Combinatorics》拆成的点化学习手册</span></td><td class="col-addr"><span class="mono">zrx-11.github.io/additive-combinatorics-enlighten/</span></td><td class="col-dep"><span class="mono">main:/</span></td><td class="col-time"><span class="mono">11-09 00:39</span></td><td class="col-commit"><span class="mono">1</span></td><td class="col-state"><span class="tag ok">构建成功</span><span class="tag ok">200</span></td></tr>
-<tr data-name="ode-enlighten" data-active="1"><td class="col-name"><a href="https://zrx-11.github.io/ode-enlighten/" target="_blank" rel="noopener">ode-enlighten</a><span class="desc">七本常微分方程教材整合的知识库，总入口 index.html</span></td><td class="col-addr"><span class="mono">zrx-11.github.io/ode-enlighten/</span></td><td class="col-dep"><span class="mono">main:/</span></td><td class="col-time"><span class="mono">11-09 00:36</span></td><td class="col-commit"><span class="mono">1</span></td><td class="col-state"><span class="tag ok">构建成功</span><span class="tag ok">200</span></td></tr>
-<tr data-name="mathmap" data-active="1"><td class="col-name"><a href="https://zrx-11.github.io/mathmap/" target="_blank" rel="noopener">mathmap</a><span class="desc">数学知识全景地图：154 节点、256 依赖边、L0–L6 分阶，含 3D 视图</span></td><td class="col-addr"><span class="mono">zrx-11.github.io/mathmap/</span></td><td class="col-dep"><span class="mono">main:/</span></td><td class="col-time"><span class="mono">11-09 00:24</span></td><td class="col-commit"><span class="mono">2</span></td><td class="col-state"><span class="tag ok">构建成功</span><span class="tag ok">200</span></td></tr>
-<tr data-name="agentic-design-patterns-handbook" data-active="1"><td class="col-name"><a href="https://zrx-11.github.io/agentic-design-patterns-handbook/" target="_blank" rel="noopener">agentic-design-patterns-handbook</a><span class="desc">《智能体设计模式》305 页拆成 26 章精讲 + 测验与抽认卡</span></td><td class="col-addr"><span class="mono">zrx-11.github.io/agentic-design-patterns-handbook/</span></td><td class="col-dep"><span class="mono">main:/</span></td><td class="col-time"><span class="mono">11-09 00:07</span></td><td class="col-commit"><span class="mono">2</span></td><td class="col-state"><span class="tag ok">构建成功</span><span class="tag ok">200</span></td></tr>
-<tr data-name="math-competition-derivation" data-active="1"><td class="col-name"><a href="https://zrx-11.github.io/math-competition-derivation/" target="_blank" rel="noopener">math-competition-derivation</a><span class="desc">全国大学生数学竞赛：5 门从零推导课 + 五章总入口</span></td><td class="col-addr"><span class="mono">zrx-11.github.io/math-competition-derivation/</span></td><td class="col-dep"><span class="mono">main:/</span></td><td class="col-time"><span class="mono">11-09 00:05</span></td><td class="col-commit"><span class="mono">1</span></td><td class="col-state"><span class="tag ok">构建成功</span><span class="tag ok">200</span></td></tr>
-<tr data-name="ai-enlighten" data-active="1"><td class="col-name"><a href="https://zrx-11.github.io/ai-enlighten/" target="_blank" rel="noopener">ai-enlighten</a><span class="desc">两本 AI 书合成的学习系统，另附两份从零推导页</span></td><td class="col-addr"><span class="mono">zrx-11.github.io/ai-enlighten/</span></td><td class="col-dep"><span class="mono">main:/</span></td><td class="col-time"><span class="mono">11-09 00:01</span></td><td class="col-commit"><span class="mono">1</span></td><td class="col-state"><span class="tag ok">构建成功</span><span class="tag ok">200</span></td></tr>
-<tr data-name="discrete-geometry-enlighten" data-active="1"><td class="col-name"><a href="https://zrx-11.github.io/discrete-geometry-enlighten/" target="_blank" rel="noopener">discrete-geometry-enlighten</a><span class="desc">《离散几何处理与应用》351 页 → 9 章精讲 + 16 概念页</span></td><td class="col-addr"><span class="mono">zrx-11.github.io/discrete-geometry-enlighten/</span></td><td class="col-dep"><span class="mono">main:/</span></td><td class="col-time"><span class="mono">11-09 00:01</span></td><td class="col-commit"><span class="mono">1</span></td><td class="col-state"><span class="tag ok">构建成功</span><span class="tag ok">200</span></td></tr>
-<tr data-name="combinatorial-optimization-game-theory" data-active="1"><td class="col-name"><a href="https://zrx-11.github.io/combinatorial-optimization-game-theory/" target="_blank" rel="noopener">combinatorial-optimization-game-theory</a><span class="desc">《组合优化与博弈论》→ 8 章精讲 + 4 个推导页</span></td><td class="col-addr"><span class="mono">zrx-11.github.io/combinatorial-optimization-game-theory/</span></td><td class="col-dep"><span class="mono">main:/</span></td><td class="col-time"><span class="mono">11-08 23:50</span></td><td class="col-commit"><span class="mono">5</span></td><td class="col-state"><span class="tag ok">构建成功</span><span class="tag ok">200</span></td></tr>
-<tr data-name="taocp-enlighten" data-active="1"><td class="col-name"><a href="https://zrx-11.github.io/taocp-enlighten/" target="_blank" rel="noopener">taocp-enlighten</a><span class="desc">六本 TAOCP 中文扫描件整合成的一套知识库</span></td><td class="col-addr"><span class="mono">zrx-11.github.io/taocp-enlighten/</span></td><td class="col-dep"><span class="mono">main:/</span></td><td class="col-time"><span class="mono">11-08 23:44</span></td><td class="col-commit"><span class="mono">3</span></td><td class="col-state"><span class="tag ok">构建成功</span><span class="tag ok">200</span></td></tr>
-<tr data-name="math-modeling-handbook" data-active="1"><td class="col-name"><a href="https://zrx-11.github.io/math-modeling-handbook/" target="_blank" rel="noopener">math-modeling-handbook</a><span class="desc">数学建模五册：从零基础到交出一份合规竞赛论文</span></td><td class="col-addr"><span class="mono">zrx-11.github.io/math-modeling-handbook/</span></td><td class="col-dep"><span class="mono">main:/</span></td><td class="col-time"><span class="mono">11-08 23:31</span></td><td class="col-commit"><span class="mono">2</span></td><td class="col-state"><span class="tag ok">构建成功</span><span class="tag ok">200</span></td></tr>
-<tr data-name="first-push-enlighten" data-active="1"><td class="col-name"><a href="https://zrx-11.github.io/first-push-enlighten/" target="_blank" rel="noopener">first-push-enlighten</a><span class="desc">《第一推动丛书》11 册做成的一套知识库</span></td><td class="col-addr"><span class="mono">zrx-11.github.io/first-push-enlighten/</span></td><td class="col-dep"><span class="mono">main:/</span></td><td class="col-time"><span class="mono">11-08 23:28</span></td><td class="col-commit"><span class="mono">1</span></td><td class="col-state"><span class="tag ok">构建成功</span><span class="tag ok">200</span></td></tr>
-<tr data-name="economics-principles-handbook" data-active="1"><td class="col-name"><a href="https://zrx-11.github.io/economics-principles-handbook/" target="_blank" rel="noopener">economics-principles-handbook</a><span class="desc">曼昆《经济学原理》微观 22 章 + 宏观 14 章</span></td><td class="col-addr"><span class="mono">zrx-11.github.io/economics-principles-handbook/</span></td><td class="col-dep"><span class="mono">main:/</span></td><td class="col-time"><span class="mono">11-08 23:28</span></td><td class="col-commit"><span class="mono">1</span></td><td class="col-state"><span class="tag ok">构建成功</span><span class="tag ok">200</span></td></tr>
-<tr data-name="analysis-handbook" data-active="1"><td class="col-name"><a href="https://zrx-11.github.io/analysis-handbook/" target="_blank" rel="noopener">analysis-handbook</a><span class="desc">Amann《分析 I·II·III》三卷 → 12 章精讲 + 概念页与测验</span></td><td class="col-addr"><span class="mono">zrx-11.github.io/analysis-handbook/</span></td><td class="col-dep"><span class="mono">main:/</span></td><td class="col-time"><span class="mono">11-08 23:02</span></td><td class="col-commit"><span class="mono">2</span></td><td class="col-state"><span class="tag ok">构建成功</span><span class="tag ok">200</span></td></tr>
-<tr data-name="gaokao-math" data-active="1"><td class="col-name"><a href="https://zrx-11.github.io/gaokao-math/" target="_blank" rel="noopener">gaokao-math</a><span class="desc">1952–2026 高考数学真题库：775 套试卷、20216 题的交互题库</span></td><td class="col-addr"><span class="mono">zrx-11.github.io/gaokao-math/</span></td><td class="col-dep"><span class="mono">main:/</span></td><td class="col-time"><span class="mono">11-08 22:36</span></td><td class="col-commit"><span class="mono">2</span></td><td class="col-state"><span class="tag ok">构建成功</span><span class="tag ok">200</span></td></tr>
-<tr data-name="ODE" data-active="1"><td class="col-name"><a href="https://zrx-11.github.io/ODE/" target="_blank" rel="noopener">ODE</a><span class="desc">杭电《常微分方程》前三章课件改写的从零推导长页</span></td><td class="col-addr"><span class="mono">zrx-11.github.io/ODE/</span></td><td class="col-dep"><span class="mono">main:/</span></td><td class="col-time"><span class="mono">11-08 22:26</span></td><td class="col-commit"><span class="mono">2</span></td><td class="col-state"><span class="tag ok">构建成功</span><span class="tag ok">200</span></td></tr>
-<tr data-name="MATH" data-active="1"><td class="col-name"><a href="https://zrx-11.github.io/MATH/" target="_blank" rel="noopener">MATH</a><span class="desc">《什么是数学》《数学手册》《普林斯顿数学指南》三书合一，24 章</span></td><td class="col-addr"><span class="mono">zrx-11.github.io/MATH/</span></td><td class="col-dep"><span class="mono">main:/</span></td><td class="col-time"><span class="mono">11-08 22:08</span></td><td class="col-commit"><span class="mono">3</span></td><td class="col-state"><span class="tag ok">构建成功</span><span class="tag ok">200</span></td></tr>
-<tr data-name="show" data-active="1"><td class="col-name"><a href="https://zrx-11.github.io/show/" target="_blank" rel="noopener">show</a><span class="desc">《观复文明·野史戏谈》二十幕动态叙事页</span></td><td class="col-addr"><span class="mono">zrx-11.github.io/show/</span></td><td class="col-dep"><span class="mono">main:/</span></td><td class="col-time"><span class="mono">11-04 11:22</span></td><td class="col-commit"><span class="mono">3</span></td><td class="col-state"><span class="tag ok">构建成功</span><span class="tag ok">200</span></td></tr>
-<tr data-name="MATLAB" data-active="1"><td class="col-name"><a href="https://zrx-11.github.io/MATLAB/" target="_blank" rel="noopener">MATLAB</a><span class="desc">MATLAB 数学实验指导手册（食品专业版专科高等数学）</span></td><td class="col-addr"><span class="mono">zrx-11.github.io/MATLAB/</span></td><td class="col-dep"><span class="mono">main:/</span></td><td class="col-time"><span class="mono">11-03 16:59</span></td><td class="col-commit"><span class="mono">2</span></td><td class="col-state"><span class="tag ok">构建成功</span><span class="tag ok">200</span></td></tr>
-<tr data-name="shallowseek" data-active="1"><td class="col-name"><a href="https://zrx-11.github.io/shallowseek/" target="_blank" rel="noopener">shallowseek</a><span class="desc">空壳仓库：只有 README，Pages 渲染出的是一张占位页</span></td><td class="col-addr"><span class="mono">zrx-11.github.io/shallowseek/</span></td><td class="col-dep"><span class="mono">main:/</span></td><td class="col-time"><span class="mono">11-02 23:17</span></td><td class="col-commit"><span class="mono">1</span></td><td class="col-state"><span class="tag ok">构建成功</span><span class="tag ok">200</span></td></tr>
-<tr data-name="C-true" data-active="0"><td class="col-name"><a href="https://zrx-11.github.io/C-true/" target="_blank" rel="noopener">C-true</a><span class="desc">《C++ 从零基础到彻底吃透》20 章完整学习手册</span></td><td class="col-addr"><span class="mono">zrx-11.github.io/C-true/</span></td><td class="col-dep"><span class="mono">main:/</span></td><td class="col-time"><span class="mono">11-01 22:17</span></td><td class="col-commit"><span class="mono">0</span></td><td class="col-state"><span class="tag ok">构建成功</span><span class="tag ok">200</span></td></tr>
-<tr data-name="C-" data-active="0"><td class="col-name"><a href="https://zrx-11.github.io/C-/" target="_blank" rel="noopener">C-</a><span class="desc">《洛谷 300 题精析》按八篇重编的题解，每题附洛谷链接</span></td><td class="col-addr"><span class="mono">zrx-11.github.io/C-/</span></td><td class="col-dep"><span class="mono">main:/</span></td><td class="col-time"><span class="mono">11-01 22:10</span></td><td class="col-commit"><span class="mono">0</span></td><td class="col-state"><span class="tag ok">构建成功</span><span class="tag ok">200</span></td></tr>
-<tr data-name="math-analysis" data-active="0"><td class="col-name"><a href="https://zrx-11.github.io/math-analysis/" target="_blank" rel="noopener">math-analysis</a><span class="desc">华师大《数学分析》下册 18–20 章从零推导，11 章</span></td><td class="col-addr"><span class="mono">zrx-11.github.io/math-analysis/</span></td><td class="col-dep"><span class="mono">main:/</span></td><td class="col-time"><span class="mono">10-30 22:41</span></td><td class="col-commit"><span class="mono">0</span></td><td class="col-state"><span class="tag ok">构建成功</span><span class="tag ok">200</span></td></tr>
-<tr data-name="transformer" data-active="0"><td class="col-name"><a href="https://zrx-11.github.io/transformer/" target="_blank" rel="noopener">transformer</a><span class="desc">Transformer 从初中数学推到专家水平的单文件交互页</span></td><td class="col-addr"><span class="mono">zrx-11.github.io/transformer/</span></td><td class="col-dep"><span class="mono">main:/</span></td><td class="col-time"><span class="mono">10-30 10:34</span></td><td class="col-commit"><span class="mono">0</span></td><td class="col-state"><span class="tag ok">构建成功</span><span class="tag ok">200</span></td></tr>
-<tr data-name="AI-courses" data-active="0"><td class="col-name"><a href="https://zrx-11.github.io/AI-courses/" target="_blank" rel="noopener">AI-courses</a><span class="desc">斯坦福/MIT 20 门 AI 课程的档案与选课导航 + 术语大词典</span></td><td class="col-addr"><span class="mono">zrx-11.github.io/AI-courses/</span></td><td class="col-dep"><span class="mono">main:/</span></td><td class="col-time"><span class="mono">10-26 21:33</span></td><td class="col-commit"><span class="mono">0</span></td><td class="col-state"><span class="tag ok">构建成功</span><span class="tag ok">200</span></td></tr>
-<tr data-name="SVM" data-active="0"><td class="col-name"><a href="https://zrx-11.github.io/SVM/" target="_blank" rel="noopener">SVM</a><span class="desc">支持向量机从零推导交互式学习页</span></td><td class="col-addr"><span class="mono">zrx-11.github.io/SVM/</span></td><td class="col-dep"><span class="mono">main:/</span></td><td class="col-time"><span class="mono">10-22 19:04</span></td><td class="col-commit"><span class="mono">0</span></td><td class="col-state"><span class="tag ok">构建成功</span><span class="tag ok">200</span></td></tr>
-<tr data-name="ACM-XCPC-Notes" data-active="0"><td class="col-name"><a href="https://zrx-11.github.io/ACM-XCPC-Notes/" target="_blank" rel="noopener">ACM-XCPC-Notes</a><span class="desc">11 个 ACM/XCPC 仓库的离线资料库：120 篇笔记、281 份讲义</span></td><td class="col-addr"><span class="mono">zrx-11.github.io/ACM-XCPC-Notes/</span></td><td class="col-dep"><span class="mono">main:/</span></td><td class="col-time"><span class="mono">10-21 11:05</span></td><td class="col-commit"><span class="mono">0</span></td><td class="col-state"><span class="tag ok">构建成功</span><span class="tag ok">200</span></td></tr>
-<tr data-name="ai-history-site" data-active="0"><td class="col-name"><a href="https://zrx-11.github.io/ai-history-site/" target="_blank" rel="noopener">ai-history-site</a><span class="desc">AI 纪元通识站：发展史时间线、LLM/Agent/RAG 等 500+ 板块</span></td><td class="col-addr"><span class="mono">zrx-11.github.io/ai-history-site/</span></td><td class="col-dep"><span class="mono">main:/</span></td><td class="col-time"><span class="mono">10-21 10:38</span></td><td class="col-commit"><span class="mono">0</span></td><td class="col-state"><span class="tag ok">构建成功</span><span class="tag ok">200</span></td></tr>
-<tr data-name="meeting-129600years" data-active="0"><td class="col-name"><a href="https://zrx-11.github.io/meeting-129600years/" target="_blank" rel="noopener">meeting-129600years</a><span class="desc">「12.96 万年后你我还会相遇嘛」一次性交互叙事页</span></td><td class="col-addr"><span class="mono">zrx-11.github.io/meeting-129600years/</span></td><td class="col-dep"><span class="mono">main:/</span></td><td class="col-time"><span class="mono">10-17 23:35</span></td><td class="col-commit"><span class="mono">0</span></td><td class="col-state"><span class="tag ok">构建成功</span><span class="tag ok">200</span></td></tr>
-<tr data-name="matchcampus-demo" data-active="0"><td class="col-name"><a href="https://zrx-11.github.io/matchcampus-demo/" target="_blank" rel="noopener">matchcampus-demo</a><span class="desc">校配 MatchCampus 校园供需匹配平台的产品演示站</span></td><td class="col-addr"><span class="mono">zrx-11.github.io/matchcampus-demo/</span></td><td class="col-dep"><span class="mono">main:/</span></td><td class="col-time"><span class="mono">10-15 01:04</span></td><td class="col-commit"><span class="mono">0</span></td><td class="col-state"><span class="tag ok">构建成功</span><span class="tag ok">200</span></td></tr>
-<tr data-name="AI-Study-Notes" data-active="0"><td class="col-name"><a href="https://zrx-11.github.io/AI-Study-Notes/" target="_blank" rel="noopener">AI-Study-Notes</a><span class="desc">AI 机理研习讲义五册 126 讲，含推导、代码与思考题</span></td><td class="col-addr"><span class="mono">zrx-11.github.io/AI-Study-Notes/</span></td><td class="col-dep"><span class="mono">main:/</span></td><td class="col-time"><span class="mono">10-14 23:02</span></td><td class="col-commit"><span class="mono">0</span></td><td class="col-state"><span class="tag ok">构建成功</span><span class="tag ok">200</span></td></tr>
-<tr data-name="bws-bilingual-reader" data-active="0"><td class="col-name"><a href="https://zrx-11.github.io/bws-bilingual-reader/" target="_blank" rel="noopener">bws-bilingual-reader</a><span class="desc">Sullivan《Mathematical Writing》中英双语离线阅读器</span></td><td class="col-addr"><span class="mono">zrx-11.github.io/bws-bilingual-reader/</span></td><td class="col-dep"><span class="mono">main:/</span></td><td class="col-time"><span class="mono">10-14 22:46</span></td><td class="col-commit"><span class="mono">0</span></td><td class="col-state"><span class="tag ok">构建成功</span><span class="tag ok">200</span></td></tr>
-<tr data-name="CourseVault-OfflineCourseMap" data-active="0"><td class="col-name"><a href="https://zrx-11.github.io/CourseVault-OfflineCourseMap/" target="_blank" rel="noopener">CourseVault-OfflineCourseMap</a><span class="desc">名校公开课学习路径地图离线版，附链接核验记录</span></td><td class="col-addr"><span class="mono">zrx-11.github.io/CourseVault-OfflineCourseMap/</span></td><td class="col-dep"><span class="mono">main:/</span></td><td class="col-time"><span class="mono">10-14 22:37</span></td><td class="col-commit"><span class="mono">0</span></td><td class="col-state"><span class="tag ok">构建成功</span><span class="tag ok">200</span></td></tr>
-<tr data-name="love-page" data-active="0"><td class="col-name"><a href="https://zrx-11.github.io/love-page/" target="_blank" rel="noopener">love-page</a><span class="desc">情侣纪念页模板：时光、里程碑、纪念日倒计时</span></td><td class="col-addr"><span class="mono">zrx-11.github.io/love-page/</span></td><td class="col-dep"><span class="mono">main:/</span></td><td class="col-time"><span class="mono">08-19 02:52</span></td><td class="col-commit"><span class="mono">0</span></td><td class="col-state"><span class="tag ok">构建成功</span><span class="tag ok">200</span></td></tr>
-        </tbody>
-      </table>
+    <div class="records" id="records">
+<article class="rec" data-name="pages-index" data-active="1"><span class="rec-idx">01</span><div class="rec-body"><h3 class="rec-name"><a href="https://zrx-11.github.io/pages-index/" target="_blank" rel="noopener">pages-index</a></h3><p class="rec-desc">本页自身：全部仓库的 Pages 索引与部署状态</p><p class="rec-meta"><a class="mono" href="https://zrx-11.github.io/pages-index/" target="_blank" rel="noopener">zrx-11.github.io/pages-index</a><span class="sep"></span><span>部署源 <b class="mono">main · /</b></span><span class="sep"></span><span>近 7 天 <b class="mono">5</b> 次提交</span><span class="sep"></span><span>构建耗时 <b class="mono">21.7s</b></span></p></div><div class="rec-state"><span class="tag ok">构建成功</span><span class="tag ok">可访问</span><time class="mono">11-09 01:21</time></div></article>
+<article class="rec" data-name="algorithm-enlighten" data-active="1"><span class="rec-idx">02</span><div class="rec-body"><h3 class="rec-name"><a href="https://zrx-11.github.io/algorithm-enlighten/" target="_blank" rel="noopener">algorithm-enlighten</a></h3><p class="rec-desc">四本算法书点化学习系统</p><p class="rec-meta"><a class="mono" href="https://zrx-11.github.io/algorithm-enlighten/" target="_blank" rel="noopener">zrx-11.github.io/algorithm-enlighten</a><span class="sep"></span><span>部署源 <b class="mono">main · /</b></span><span class="sep"></span><span>近 7 天 <b class="mono">5</b> 次提交</span><span class="sep"></span><span>构建耗时 <b class="mono">20.7s</b></span></p></div><div class="rec-state"><span class="tag ok">构建成功</span><span class="tag ok">可访问</span><time class="mono">11-09 01:16</time></div></article>
+<article class="rec" data-name="cpu-enlighten" data-active="1"><span class="rec-idx">03</span><div class="rec-body"><h3 class="rec-name"><a href="https://zrx-11.github.io/cpu-enlighten/" target="_blank" rel="noopener">cpu-enlighten</a></h3><p class="rec-desc">CPU通识课点化学习系统：38章精讲 + 交互总入口</p><p class="rec-meta"><a class="mono" href="https://zrx-11.github.io/cpu-enlighten/" target="_blank" rel="noopener">zrx-11.github.io/cpu-enlighten</a><span class="sep"></span><span>部署源 <b class="mono">main · /</b></span><span class="sep"></span><span>近 7 天 <b class="mono">5</b> 次提交</span><span class="sep"></span><span>构建耗时 <b class="mono">19.9s</b></span></p></div><div class="rec-state"><span class="tag ok">构建成功</span><span class="tag ok">可访问</span><time class="mono">11-09 01:16</time></div></article>
+<article class="rec" data-name="book-enlighten" data-active="1"><span class="rec-idx">04</span><div class="rec-body"><h3 class="rec-name"><a href="https://zrx-11.github.io/book-enlighten/" target="_blank" rel="noopener">book-enlighten</a></h3><p class="rec-desc">点化书籍为学习系统的技能</p><p class="rec-meta"><a class="mono" href="https://zrx-11.github.io/book-enlighten/" target="_blank" rel="noopener">zrx-11.github.io/book-enlighten</a><span class="sep"></span><span>部署源 <b class="mono">main · /</b></span><span class="sep"></span><span>近 7 天 <b class="mono">2</b> 次提交</span><span class="sep"></span><span>构建耗时 <b class="mono">29.7s</b></span></p></div><div class="rec-state"><span class="tag ok">构建成功</span><span class="tag ok">可访问</span><time class="mono">11-09 01:10</time></div></article>
+<article class="rec" data-name="ai-ml-dl-rl-enlighten" data-active="1"><span class="rec-idx">05</span><div class="rec-body"><h3 class="rec-name"><a href="https://zrx-11.github.io/ai-ml-dl-rl-enlighten/" target="_blank" rel="noopener">ai-ml-dl-rl-enlighten</a></h3><p class="rec-desc">五本 AI/ML/DL/RL 教材点化学习系统：AIMA 4e 为骨架，串联周志华、深度学习入门、动手学深度学习、Sutton 强化学习；含三页从零推导</p><p class="rec-meta"><a class="mono" href="https://zrx-11.github.io/ai-ml-dl-rl-enlighten/" target="_blank" rel="noopener">zrx-11.github.io/ai-ml-dl-rl-enlighten</a><span class="sep"></span><span>部署源 <b class="mono">main · /</b></span><span class="sep"></span><span>近 7 天 <b class="mono">3</b> 次提交</span><span class="sep"></span><span>构建耗时 <b class="mono">23.2s</b></span></p></div><div class="rec-state"><span class="tag ok">构建成功</span><span class="tag ok">可访问</span><time class="mono">11-09 01:02</time></div></article>
+<article class="rec" data-name="math-basics-enlighten" data-active="1"><span class="rec-idx">06</span><div class="rec-body"><h3 class="rec-name"><a href="https://zrx-11.github.io/math-basics-enlighten/" target="_blank" rel="noopener">math-basics-enlighten</a></h3><p class="rec-desc">24 本扫描版数学读物做成的可开学知识库</p><p class="rec-meta"><a class="mono" href="https://zrx-11.github.io/math-basics-enlighten/" target="_blank" rel="noopener">zrx-11.github.io/math-basics-enlighten</a><span class="sep"></span><span>部署源 <b class="mono">main · /</b></span><span class="sep"></span><span>近 7 天 <b class="mono">3</b> 次提交</span><span class="sep"></span><span>构建耗时 <b class="mono">24.2s</b></span></p></div><div class="rec-state"><span class="tag ok">构建成功</span><span class="tag ok">可访问</span><time class="mono">11-09 00:45</time></div></article>
+<article class="rec" data-name="probability-statistics" data-active="1"><span class="rec-idx">07</span><div class="rec-body"><h3 class="rec-name"><a href="https://zrx-11.github.io/probability-statistics/" target="_blank" rel="noopener">probability-statistics</a></h3><p class="rec-desc">《概率统计》课件前三章改写的从零推导交互页，27 章</p><p class="rec-meta"><a class="mono" href="https://zrx-11.github.io/probability-statistics/" target="_blank" rel="noopener">zrx-11.github.io/probability-statistics</a><span class="sep"></span><span>部署源 <b class="mono">main · /</b></span><span class="sep"></span><span>近 7 天 <b class="mono">1</b> 次提交</span><span class="sep"></span><span>构建耗时 <b class="mono">36.2s</b></span></p></div><div class="rec-state"><span class="tag ok">构建成功</span><span class="tag ok">可访问</span><time class="mono">11-09 00:39</time></div></article>
+<article class="rec" data-name="first-principles-derivation" data-active="1"><span class="rec-idx">08</span><div class="rec-body"><h3 class="rec-name"><a href="https://zrx-11.github.io/first-principles-derivation/" target="_blank" rel="noopener">first-principles-derivation</a></h3><p class="rec-desc">「从零推导」方法说明：把知识逆推到初中数学逐层重建</p><p class="rec-meta"><a class="mono" href="https://zrx-11.github.io/first-principles-derivation/" target="_blank" rel="noopener">zrx-11.github.io/first-principles-derivation</a><span class="sep"></span><span>部署源 <b class="mono">main · /</b></span><span class="sep"></span><span>近 7 天 <b class="mono">1</b> 次提交</span><span class="sep"></span><span>构建耗时 <b class="mono">36.2s</b></span></p></div><div class="rec-state"><span class="tag ok">构建成功</span><span class="tag ok">可访问</span><time class="mono">11-09 00:39</time></div></article>
+<article class="rec" data-name="additive-combinatorics-enlighten" data-active="1"><span class="rec-idx">09</span><div class="rec-body"><h3 class="rec-name"><a href="https://zrx-11.github.io/additive-combinatorics-enlighten/" target="_blank" rel="noopener">additive-combinatorics-enlighten</a></h3><p class="rec-desc">Tao &amp; Vu《Additive Combinatorics》拆成的点化学习手册</p><p class="rec-meta"><a class="mono" href="https://zrx-11.github.io/additive-combinatorics-enlighten/" target="_blank" rel="noopener">zrx-11.github.io/additive-combinatorics-enlighten</a><span class="sep"></span><span>部署源 <b class="mono">main · /</b></span><span class="sep"></span><span>近 7 天 <b class="mono">1</b> 次提交</span><span class="sep"></span><span>构建耗时 <b class="mono">23.3s</b></span></p></div><div class="rec-state"><span class="tag ok">构建成功</span><span class="tag ok">可访问</span><time class="mono">11-09 00:39</time></div></article>
+<article class="rec" data-name="ode-enlighten" data-active="1"><span class="rec-idx">10</span><div class="rec-body"><h3 class="rec-name"><a href="https://zrx-11.github.io/ode-enlighten/" target="_blank" rel="noopener">ode-enlighten</a></h3><p class="rec-desc">七本常微分方程教材整合的知识库，总入口 index.html</p><p class="rec-meta"><a class="mono" href="https://zrx-11.github.io/ode-enlighten/" target="_blank" rel="noopener">zrx-11.github.io/ode-enlighten</a><span class="sep"></span><span>部署源 <b class="mono">main · /</b></span><span class="sep"></span><span>近 7 天 <b class="mono">1</b> 次提交</span><span class="sep"></span><span>构建耗时 <b class="mono">23.0s</b></span></p></div><div class="rec-state"><span class="tag ok">构建成功</span><span class="tag ok">可访问</span><time class="mono">11-09 00:36</time></div></article>
+<article class="rec" data-name="mathmap" data-active="1"><span class="rec-idx">11</span><div class="rec-body"><h3 class="rec-name"><a href="https://zrx-11.github.io/mathmap/" target="_blank" rel="noopener">mathmap</a></h3><p class="rec-desc">数学知识全景地图：154 节点、256 依赖边、L0–L6 分阶，含 3D 视图</p><p class="rec-meta"><a class="mono" href="https://zrx-11.github.io/mathmap/" target="_blank" rel="noopener">zrx-11.github.io/mathmap</a><span class="sep"></span><span>部署源 <b class="mono">main · /</b></span><span class="sep"></span><span>近 7 天 <b class="mono">2</b> 次提交</span><span class="sep"></span><span>构建耗时 <b class="mono">18.1s</b></span></p></div><div class="rec-state"><span class="tag ok">构建成功</span><span class="tag ok">可访问</span><time class="mono">11-09 00:24</time></div></article>
+<article class="rec" data-name="agentic-design-patterns-handbook" data-active="1"><span class="rec-idx">12</span><div class="rec-body"><h3 class="rec-name"><a href="https://zrx-11.github.io/agentic-design-patterns-handbook/" target="_blank" rel="noopener">agentic-design-patterns-handbook</a></h3><p class="rec-desc">《智能体设计模式》305 页拆成 26 章精讲 + 测验与抽认卡</p><p class="rec-meta"><a class="mono" href="https://zrx-11.github.io/agentic-design-patterns-handbook/" target="_blank" rel="noopener">zrx-11.github.io/agentic-design-patterns-handbook</a><span class="sep"></span><span>部署源 <b class="mono">main · /</b></span><span class="sep"></span><span>近 7 天 <b class="mono">2</b> 次提交</span><span class="sep"></span><span>构建耗时 <b class="mono">22.5s</b></span></p></div><div class="rec-state"><span class="tag ok">构建成功</span><span class="tag ok">可访问</span><time class="mono">11-09 00:07</time></div></article>
+<article class="rec" data-name="math-competition-derivation" data-active="1"><span class="rec-idx">13</span><div class="rec-body"><h3 class="rec-name"><a href="https://zrx-11.github.io/math-competition-derivation/" target="_blank" rel="noopener">math-competition-derivation</a></h3><p class="rec-desc">全国大学生数学竞赛：5 门从零推导课 + 五章总入口</p><p class="rec-meta"><a class="mono" href="https://zrx-11.github.io/math-competition-derivation/" target="_blank" rel="noopener">zrx-11.github.io/math-competition-derivation</a><span class="sep"></span><span>部署源 <b class="mono">main · /</b></span><span class="sep"></span><span>近 7 天 <b class="mono">1</b> 次提交</span><span class="sep"></span><span>构建耗时 <b class="mono">18.5s</b></span></p></div><div class="rec-state"><span class="tag ok">构建成功</span><span class="tag ok">可访问</span><time class="mono">11-09 00:05</time></div></article>
+<article class="rec" data-name="ai-enlighten" data-active="1"><span class="rec-idx">14</span><div class="rec-body"><h3 class="rec-name"><a href="https://zrx-11.github.io/ai-enlighten/" target="_blank" rel="noopener">ai-enlighten</a></h3><p class="rec-desc">两本 AI 书合成的学习系统，另附两份从零推导页</p><p class="rec-meta"><a class="mono" href="https://zrx-11.github.io/ai-enlighten/" target="_blank" rel="noopener">zrx-11.github.io/ai-enlighten</a><span class="sep"></span><span>部署源 <b class="mono">main · /</b></span><span class="sep"></span><span>近 7 天 <b class="mono">1</b> 次提交</span><span class="sep"></span><span>构建耗时 <b class="mono">23.4s</b></span></p></div><div class="rec-state"><span class="tag ok">构建成功</span><span class="tag ok">可访问</span><time class="mono">11-09 00:01</time></div></article>
+<article class="rec" data-name="discrete-geometry-enlighten" data-active="1"><span class="rec-idx">15</span><div class="rec-body"><h3 class="rec-name"><a href="https://zrx-11.github.io/discrete-geometry-enlighten/" target="_blank" rel="noopener">discrete-geometry-enlighten</a></h3><p class="rec-desc">《离散几何处理与应用》351 页 → 9 章精讲 + 16 概念页</p><p class="rec-meta"><a class="mono" href="https://zrx-11.github.io/discrete-geometry-enlighten/" target="_blank" rel="noopener">zrx-11.github.io/discrete-geometry-enlighten</a><span class="sep"></span><span>部署源 <b class="mono">main · /</b></span><span class="sep"></span><span>近 7 天 <b class="mono">1</b> 次提交</span><span class="sep"></span><span>构建耗时 <b class="mono">23.4s</b></span></p></div><div class="rec-state"><span class="tag ok">构建成功</span><span class="tag ok">可访问</span><time class="mono">11-09 00:01</time></div></article>
+<article class="rec" data-name="combinatorial-optimization-game-theory" data-active="1"><span class="rec-idx">16</span><div class="rec-body"><h3 class="rec-name"><a href="https://zrx-11.github.io/combinatorial-optimization-game-theory/" target="_blank" rel="noopener">combinatorial-optimization-game-theory</a></h3><p class="rec-desc">《组合优化与博弈论》→ 8 章精讲 + 4 个推导页</p><p class="rec-meta"><a class="mono" href="https://zrx-11.github.io/combinatorial-optimization-game-theory/" target="_blank" rel="noopener">zrx-11.github.io/combinatorial-optimization-game-theory</a><span class="sep"></span><span>部署源 <b class="mono">main · /</b></span><span class="sep"></span><span>近 7 天 <b class="mono">5</b> 次提交</span><span class="sep"></span><span>构建耗时 <b class="mono">21.3s</b></span></p></div><div class="rec-state"><span class="tag ok">构建成功</span><span class="tag ok">可访问</span><time class="mono">11-08 23:50</time></div></article>
+<article class="rec" data-name="taocp-enlighten" data-active="1"><span class="rec-idx">17</span><div class="rec-body"><h3 class="rec-name"><a href="https://zrx-11.github.io/taocp-enlighten/" target="_blank" rel="noopener">taocp-enlighten</a></h3><p class="rec-desc">六本 TAOCP 中文扫描件整合成的一套知识库</p><p class="rec-meta"><a class="mono" href="https://zrx-11.github.io/taocp-enlighten/" target="_blank" rel="noopener">zrx-11.github.io/taocp-enlighten</a><span class="sep"></span><span>部署源 <b class="mono">main · /</b></span><span class="sep"></span><span>近 7 天 <b class="mono">3</b> 次提交</span><span class="sep"></span><span>构建耗时 <b class="mono">22.3s</b></span></p></div><div class="rec-state"><span class="tag ok">构建成功</span><span class="tag ok">可访问</span><time class="mono">11-08 23:44</time></div></article>
+<article class="rec" data-name="math-modeling-handbook" data-active="1"><span class="rec-idx">18</span><div class="rec-body"><h3 class="rec-name"><a href="https://zrx-11.github.io/math-modeling-handbook/" target="_blank" rel="noopener">math-modeling-handbook</a></h3><p class="rec-desc">数学建模五册：从零基础到交出一份合规竞赛论文</p><p class="rec-meta"><a class="mono" href="https://zrx-11.github.io/math-modeling-handbook/" target="_blank" rel="noopener">zrx-11.github.io/math-modeling-handbook</a><span class="sep"></span><span>部署源 <b class="mono">main · /</b></span><span class="sep"></span><span>近 7 天 <b class="mono">2</b> 次提交</span><span class="sep"></span><span>构建耗时 <b class="mono">21.4s</b></span></p></div><div class="rec-state"><span class="tag ok">构建成功</span><span class="tag ok">可访问</span><time class="mono">11-08 23:31</time></div></article>
+<article class="rec" data-name="first-push-enlighten" data-active="1"><span class="rec-idx">19</span><div class="rec-body"><h3 class="rec-name"><a href="https://zrx-11.github.io/first-push-enlighten/" target="_blank" rel="noopener">first-push-enlighten</a></h3><p class="rec-desc">《第一推动丛书》11 册做成的一套知识库</p><p class="rec-meta"><a class="mono" href="https://zrx-11.github.io/first-push-enlighten/" target="_blank" rel="noopener">zrx-11.github.io/first-push-enlighten</a><span class="sep"></span><span>部署源 <b class="mono">main · /</b></span><span class="sep"></span><span>近 7 天 <b class="mono">1</b> 次提交</span><span class="sep"></span><span>构建耗时 <b class="mono">21.4s</b></span></p></div><div class="rec-state"><span class="tag ok">构建成功</span><span class="tag ok">可访问</span><time class="mono">11-08 23:28</time></div></article>
+<article class="rec" data-name="economics-principles-handbook" data-active="1"><span class="rec-idx">20</span><div class="rec-body"><h3 class="rec-name"><a href="https://zrx-11.github.io/economics-principles-handbook/" target="_blank" rel="noopener">economics-principles-handbook</a></h3><p class="rec-desc">曼昆《经济学原理》微观 22 章 + 宏观 14 章</p><p class="rec-meta"><a class="mono" href="https://zrx-11.github.io/economics-principles-handbook/" target="_blank" rel="noopener">zrx-11.github.io/economics-principles-handbook</a><span class="sep"></span><span>部署源 <b class="mono">main · /</b></span><span class="sep"></span><span>近 7 天 <b class="mono">1</b> 次提交</span><span class="sep"></span><span>构建耗时 <b class="mono">22.1s</b></span></p></div><div class="rec-state"><span class="tag ok">构建成功</span><span class="tag ok">可访问</span><time class="mono">11-08 23:28</time></div></article>
+<article class="rec" data-name="analysis-handbook" data-active="1"><span class="rec-idx">21</span><div class="rec-body"><h3 class="rec-name"><a href="https://zrx-11.github.io/analysis-handbook/" target="_blank" rel="noopener">analysis-handbook</a></h3><p class="rec-desc">Amann《分析 I·II·III》三卷 → 12 章精讲 + 概念页与测验</p><p class="rec-meta"><a class="mono" href="https://zrx-11.github.io/analysis-handbook/" target="_blank" rel="noopener">zrx-11.github.io/analysis-handbook</a><span class="sep"></span><span>部署源 <b class="mono">main · /</b></span><span class="sep"></span><span>近 7 天 <b class="mono">2</b> 次提交</span><span class="sep"></span><span>构建耗时 <b class="mono">22.9s</b></span></p></div><div class="rec-state"><span class="tag ok">构建成功</span><span class="tag ok">可访问</span><time class="mono">11-08 23:02</time></div></article>
+<article class="rec" data-name="gaokao-math" data-active="1"><span class="rec-idx">22</span><div class="rec-body"><h3 class="rec-name"><a href="https://zrx-11.github.io/gaokao-math/" target="_blank" rel="noopener">gaokao-math</a></h3><p class="rec-desc">1952–2026 高考数学真题库：775 套试卷、20216 题的交互题库</p><p class="rec-meta"><a class="mono" href="https://zrx-11.github.io/gaokao-math/" target="_blank" rel="noopener">zrx-11.github.io/gaokao-math</a><span class="sep"></span><span>部署源 <b class="mono">main · /</b></span><span class="sep"></span><span>近 7 天 <b class="mono">2</b> 次提交</span><span class="sep"></span><span>构建耗时 <b class="mono">19.2s</b></span></p></div><div class="rec-state"><span class="tag ok">构建成功</span><span class="tag ok">可访问</span><time class="mono">11-08 22:36</time></div></article>
+<article class="rec" data-name="ODE" data-active="1"><span class="rec-idx">23</span><div class="rec-body"><h3 class="rec-name"><a href="https://zrx-11.github.io/ODE/" target="_blank" rel="noopener">ODE</a></h3><p class="rec-desc">杭电《常微分方程》前三章课件改写的从零推导长页</p><p class="rec-meta"><a class="mono" href="https://zrx-11.github.io/ODE/" target="_blank" rel="noopener">zrx-11.github.io/ODE</a><span class="sep"></span><span>部署源 <b class="mono">main · /</b></span><span class="sep"></span><span>近 7 天 <b class="mono">2</b> 次提交</span><span class="sep"></span><span>构建耗时 <b class="mono">35.7s</b></span></p></div><div class="rec-state"><span class="tag ok">构建成功</span><span class="tag ok">可访问</span><time class="mono">11-08 22:26</time></div></article>
+<article class="rec" data-name="MATH" data-active="1"><span class="rec-idx">24</span><div class="rec-body"><h3 class="rec-name"><a href="https://zrx-11.github.io/MATH/" target="_blank" rel="noopener">MATH</a></h3><p class="rec-desc">《什么是数学》《数学手册》《普林斯顿数学指南》三书合一，24 章</p><p class="rec-meta"><a class="mono" href="https://zrx-11.github.io/MATH/" target="_blank" rel="noopener">zrx-11.github.io/MATH</a><span class="sep"></span><span>部署源 <b class="mono">main · /</b></span><span class="sep"></span><span>近 7 天 <b class="mono">3</b> 次提交</span><span class="sep"></span><span>构建耗时 <b class="mono">34.7s</b></span></p></div><div class="rec-state"><span class="tag ok">构建成功</span><span class="tag ok">可访问</span><time class="mono">11-08 22:08</time></div></article>
+<article class="rec" data-name="show" data-active="1"><span class="rec-idx">25</span><div class="rec-body"><h3 class="rec-name"><a href="https://zrx-11.github.io/show/" target="_blank" rel="noopener">show</a></h3><p class="rec-desc">《观复文明·野史戏谈》二十幕动态叙事页</p><p class="rec-meta"><a class="mono" href="https://zrx-11.github.io/show/" target="_blank" rel="noopener">zrx-11.github.io/show</a><span class="sep"></span><span>部署源 <b class="mono">main · /</b></span><span class="sep"></span><span>近 7 天 <b class="mono">3</b> 次提交</span><span class="sep"></span><span>构建耗时 <b class="mono">36.4s</b></span></p></div><div class="rec-state"><span class="tag ok">构建成功</span><span class="tag ok">可访问</span><time class="mono">11-04 11:22</time></div></article>
+<article class="rec" data-name="MATLAB" data-active="1"><span class="rec-idx">26</span><div class="rec-body"><h3 class="rec-name"><a href="https://zrx-11.github.io/MATLAB/" target="_blank" rel="noopener">MATLAB</a></h3><p class="rec-desc">MATLAB 数学实验指导手册（食品专业版专科高等数学）</p><p class="rec-meta"><a class="mono" href="https://zrx-11.github.io/MATLAB/" target="_blank" rel="noopener">zrx-11.github.io/MATLAB</a><span class="sep"></span><span>部署源 <b class="mono">main · /</b></span><span class="sep"></span><span>近 7 天 <b class="mono">2</b> 次提交</span><span class="sep"></span><span>构建耗时 <b class="mono">58.6s</b></span></p></div><div class="rec-state"><span class="tag ok">构建成功</span><span class="tag ok">可访问</span><time class="mono">11-03 16:59</time></div></article>
+<article class="rec" data-name="shallowseek" data-active="1"><span class="rec-idx">27</span><div class="rec-body"><h3 class="rec-name"><a href="https://zrx-11.github.io/shallowseek/" target="_blank" rel="noopener">shallowseek</a></h3><p class="rec-desc">空壳仓库：只有 README，Pages 渲染出的是一张占位页</p><p class="rec-meta"><a class="mono" href="https://zrx-11.github.io/shallowseek/" target="_blank" rel="noopener">zrx-11.github.io/shallowseek</a><span class="sep"></span><span>部署源 <b class="mono">main · /</b></span><span class="sep"></span><span>近 7 天 <b class="mono">1</b> 次提交</span><span class="sep"></span><span>构建耗时 <b class="mono">72.6s</b></span></p></div><div class="rec-state"><span class="tag ok">构建成功</span><span class="tag ok">可访问</span><time class="mono">11-02 23:17</time></div></article>
+<article class="rec" data-name="C-true" data-active="0"><span class="rec-idx">28</span><div class="rec-body"><h3 class="rec-name"><a href="https://zrx-11.github.io/C-true/" target="_blank" rel="noopener">C-true</a></h3><p class="rec-desc">《C++ 从零基础到彻底吃透》20 章完整学习手册</p><p class="rec-meta"><a class="mono" href="https://zrx-11.github.io/C-true/" target="_blank" rel="noopener">zrx-11.github.io/C-true</a><span class="sep"></span><span>部署源 <b class="mono">main · /</b></span><span class="sep"></span><span>近 7 天 <b class="mono">0</b> 次提交</span><span class="sep"></span><span>构建耗时 <b class="mono">54.9s</b></span></p></div><div class="rec-state"><span class="tag ok">构建成功</span><span class="tag ok">可访问</span><time class="mono">11-01 22:17</time></div></article>
+<article class="rec" data-name="C-" data-active="0"><span class="rec-idx">29</span><div class="rec-body"><h3 class="rec-name"><a href="https://zrx-11.github.io/C-/" target="_blank" rel="noopener">C-</a></h3><p class="rec-desc">《洛谷 300 题精析》按八篇重编的题解，每题附洛谷链接</p><p class="rec-meta"><a class="mono" href="https://zrx-11.github.io/C-/" target="_blank" rel="noopener">zrx-11.github.io/C-</a><span class="sep"></span><span>部署源 <b class="mono">main · /</b></span><span class="sep"></span><span>近 7 天 <b class="mono">0</b> 次提交</span><span class="sep"></span><span>构建耗时 <b class="mono">37.3s</b></span></p></div><div class="rec-state"><span class="tag ok">构建成功</span><span class="tag ok">可访问</span><time class="mono">11-01 22:10</time></div></article>
+<article class="rec" data-name="math-analysis" data-active="0"><span class="rec-idx">30</span><div class="rec-body"><h3 class="rec-name"><a href="https://zrx-11.github.io/math-analysis/" target="_blank" rel="noopener">math-analysis</a></h3><p class="rec-desc">华师大《数学分析》下册 18–20 章从零推导，11 章</p><p class="rec-meta"><a class="mono" href="https://zrx-11.github.io/math-analysis/" target="_blank" rel="noopener">zrx-11.github.io/math-analysis</a><span class="sep"></span><span>部署源 <b class="mono">main · /</b></span><span class="sep"></span><span>近 7 天 <b class="mono">0</b> 次提交</span><span class="sep"></span><span>构建耗时 <b class="mono">41.2s</b></span></p></div><div class="rec-state"><span class="tag ok">构建成功</span><span class="tag ok">可访问</span><time class="mono">10-30 22:41</time></div></article>
+<article class="rec" data-name="transformer" data-active="0"><span class="rec-idx">31</span><div class="rec-body"><h3 class="rec-name"><a href="https://zrx-11.github.io/transformer/" target="_blank" rel="noopener">transformer</a></h3><p class="rec-desc">Transformer 从初中数学推到专家水平的单文件交互页</p><p class="rec-meta"><a class="mono" href="https://zrx-11.github.io/transformer/" target="_blank" rel="noopener">zrx-11.github.io/transformer</a><span class="sep"></span><span>部署源 <b class="mono">main · /</b></span><span class="sep"></span><span>近 7 天 <b class="mono">0</b> 次提交</span><span class="sep"></span><span>构建耗时 <b class="mono">35.0s</b></span></p></div><div class="rec-state"><span class="tag ok">构建成功</span><span class="tag ok">可访问</span><time class="mono">10-30 10:34</time></div></article>
+<article class="rec" data-name="AI-courses" data-active="0"><span class="rec-idx">32</span><div class="rec-body"><h3 class="rec-name"><a href="https://zrx-11.github.io/AI-courses/" target="_blank" rel="noopener">AI-courses</a></h3><p class="rec-desc">斯坦福/MIT 20 门 AI 课程的档案与选课导航 + 术语大词典</p><p class="rec-meta"><a class="mono" href="https://zrx-11.github.io/AI-courses/" target="_blank" rel="noopener">zrx-11.github.io/AI-courses</a><span class="sep"></span><span>部署源 <b class="mono">main · /</b></span><span class="sep"></span><span>近 7 天 <b class="mono">0</b> 次提交</span><span class="sep"></span><span>构建耗时 <b class="mono">82.1s</b></span></p></div><div class="rec-state"><span class="tag ok">构建成功</span><span class="tag ok">可访问</span><time class="mono">10-26 21:33</time></div></article>
+<article class="rec" data-name="SVM" data-active="0"><span class="rec-idx">33</span><div class="rec-body"><h3 class="rec-name"><a href="https://zrx-11.github.io/SVM/" target="_blank" rel="noopener">SVM</a></h3><p class="rec-desc">支持向量机从零推导交互式学习页</p><p class="rec-meta"><a class="mono" href="https://zrx-11.github.io/SVM/" target="_blank" rel="noopener">zrx-11.github.io/SVM</a><span class="sep"></span><span>部署源 <b class="mono">main · /</b></span><span class="sep"></span><span>近 7 天 <b class="mono">0</b> 次提交</span><span class="sep"></span><span>构建耗时 <b class="mono">41.2s</b></span></p></div><div class="rec-state"><span class="tag ok">构建成功</span><span class="tag ok">可访问</span><time class="mono">10-22 19:04</time></div></article>
+<article class="rec" data-name="ACM-XCPC-Notes" data-active="0"><span class="rec-idx">34</span><div class="rec-body"><h3 class="rec-name"><a href="https://zrx-11.github.io/ACM-XCPC-Notes/" target="_blank" rel="noopener">ACM-XCPC-Notes</a></h3><p class="rec-desc">11 个 ACM/XCPC 仓库的离线资料库：120 篇笔记、281 份讲义</p><p class="rec-meta"><a class="mono" href="https://zrx-11.github.io/ACM-XCPC-Notes/" target="_blank" rel="noopener">zrx-11.github.io/ACM-XCPC-Notes</a><span class="sep"></span><span>部署源 <b class="mono">main · /</b></span><span class="sep"></span><span>近 7 天 <b class="mono">0</b> 次提交</span><span class="sep"></span><span>构建耗时 <b class="mono">80.2s</b></span></p></div><div class="rec-state"><span class="tag ok">构建成功</span><span class="tag ok">可访问</span><time class="mono">10-21 11:05</time></div></article>
+<article class="rec" data-name="ai-history-site" data-active="0"><span class="rec-idx">35</span><div class="rec-body"><h3 class="rec-name"><a href="https://zrx-11.github.io/ai-history-site/" target="_blank" rel="noopener">ai-history-site</a></h3><p class="rec-desc">AI 纪元通识站：发展史时间线、LLM/Agent/RAG 等 500+ 板块</p><p class="rec-meta"><a class="mono" href="https://zrx-11.github.io/ai-history-site/" target="_blank" rel="noopener">zrx-11.github.io/ai-history-site</a><span class="sep"></span><span>部署源 <b class="mono">main · /</b></span><span class="sep"></span><span>近 7 天 <b class="mono">0</b> 次提交</span><span class="sep"></span><span>构建耗时 <b class="mono">43.8s</b></span></p></div><div class="rec-state"><span class="tag ok">构建成功</span><span class="tag ok">可访问</span><time class="mono">10-21 10:38</time></div></article>
+<article class="rec" data-name="meeting-129600years" data-active="0"><span class="rec-idx">36</span><div class="rec-body"><h3 class="rec-name"><a href="https://zrx-11.github.io/meeting-129600years/" target="_blank" rel="noopener">meeting-129600years</a></h3><p class="rec-desc">「12.96 万年后你我还会相遇嘛」一次性交互叙事页</p><p class="rec-meta"><a class="mono" href="https://zrx-11.github.io/meeting-129600years/" target="_blank" rel="noopener">zrx-11.github.io/meeting-129600years</a><span class="sep"></span><span>部署源 <b class="mono">main · /</b></span><span class="sep"></span><span>近 7 天 <b class="mono">0</b> 次提交</span><span class="sep"></span><span>构建耗时 <b class="mono">42.3s</b></span></p></div><div class="rec-state"><span class="tag ok">构建成功</span><span class="tag ok">可访问</span><time class="mono">10-17 23:35</time></div></article>
+<article class="rec" data-name="matchcampus-demo" data-active="0"><span class="rec-idx">37</span><div class="rec-body"><h3 class="rec-name"><a href="https://zrx-11.github.io/matchcampus-demo/" target="_blank" rel="noopener">matchcampus-demo</a></h3><p class="rec-desc">校配 MatchCampus 校园供需匹配平台的产品演示站</p><p class="rec-meta"><a class="mono" href="https://zrx-11.github.io/matchcampus-demo/" target="_blank" rel="noopener">zrx-11.github.io/matchcampus-demo</a><span class="sep"></span><span>部署源 <b class="mono">main · /</b></span><span class="sep"></span><span>近 7 天 <b class="mono">0</b> 次提交</span><span class="sep"></span><span>构建耗时 <b class="mono">43.1s</b></span></p></div><div class="rec-state"><span class="tag ok">构建成功</span><span class="tag ok">可访问</span><time class="mono">10-15 01:04</time></div></article>
+<article class="rec" data-name="AI-Study-Notes" data-active="0"><span class="rec-idx">38</span><div class="rec-body"><h3 class="rec-name"><a href="https://zrx-11.github.io/AI-Study-Notes/" target="_blank" rel="noopener">AI-Study-Notes</a></h3><p class="rec-desc">AI 机理研习讲义五册 126 讲，含推导、代码与思考题</p><p class="rec-meta"><a class="mono" href="https://zrx-11.github.io/AI-Study-Notes/" target="_blank" rel="noopener">zrx-11.github.io/AI-Study-Notes</a><span class="sep"></span><span>部署源 <b class="mono">main · /</b></span><span class="sep"></span><span>近 7 天 <b class="mono">0</b> 次提交</span><span class="sep"></span><span>构建耗时 <b class="mono">57.4s</b></span></p></div><div class="rec-state"><span class="tag ok">构建成功</span><span class="tag ok">可访问</span><time class="mono">10-14 23:02</time></div></article>
+<article class="rec" data-name="bws-bilingual-reader" data-active="0"><span class="rec-idx">39</span><div class="rec-body"><h3 class="rec-name"><a href="https://zrx-11.github.io/bws-bilingual-reader/" target="_blank" rel="noopener">bws-bilingual-reader</a></h3><p class="rec-desc">Sullivan《Mathematical Writing》中英双语离线阅读器</p><p class="rec-meta"><a class="mono" href="https://zrx-11.github.io/bws-bilingual-reader/" target="_blank" rel="noopener">zrx-11.github.io/bws-bilingual-reader</a><span class="sep"></span><span>部署源 <b class="mono">main · /</b></span><span class="sep"></span><span>近 7 天 <b class="mono">0</b> 次提交</span><span class="sep"></span><span>构建耗时 <b class="mono">52.6s</b></span></p></div><div class="rec-state"><span class="tag ok">构建成功</span><span class="tag ok">可访问</span><time class="mono">10-14 22:46</time></div></article>
+<article class="rec" data-name="CourseVault-OfflineCourseMap" data-active="0"><span class="rec-idx">40</span><div class="rec-body"><h3 class="rec-name"><a href="https://zrx-11.github.io/CourseVault-OfflineCourseMap/" target="_blank" rel="noopener">CourseVault-OfflineCourseMap</a></h3><p class="rec-desc">名校公开课学习路径地图离线版，附链接核验记录</p><p class="rec-meta"><a class="mono" href="https://zrx-11.github.io/CourseVault-OfflineCourseMap/" target="_blank" rel="noopener">zrx-11.github.io/CourseVault-OfflineCourseMap</a><span class="sep"></span><span>部署源 <b class="mono">main · /</b></span><span class="sep"></span><span>近 7 天 <b class="mono">0</b> 次提交</span><span class="sep"></span><span>构建耗时 <b class="mono">102.2s</b></span></p></div><div class="rec-state"><span class="tag ok">构建成功</span><span class="tag ok">可访问</span><time class="mono">10-14 22:37</time></div></article>
+<article class="rec" data-name="love-page" data-active="0"><span class="rec-idx">41</span><div class="rec-body"><h3 class="rec-name"><a href="https://zrx-11.github.io/love-page/" target="_blank" rel="noopener">love-page</a></h3><p class="rec-desc">情侣纪念页模板：时光、里程碑、纪念日倒计时</p><p class="rec-meta"><a class="mono" href="https://zrx-11.github.io/love-page/" target="_blank" rel="noopener">zrx-11.github.io/love-page</a><span class="sep"></span><span>部署源 <b class="mono">main · /</b></span><span class="sep"></span><span>近 7 天 <b class="mono">0</b> 次提交</span><span class="sep"></span><span>构建耗时 <b class="mono">39.4s</b></span></p></div><div class="rec-state"><span class="tag ok">构建成功</span><span class="tag ok">可访问</span><time class="mono">08-19 02:52</time></div></article>
     </div>
-    <p class="empty" id="no-hit" hidden>没有匹配的站点，换个关键词或筛选条件试试。</p>
+    <p id="no-hit">没有匹配的站点，换个关键词或筛选条件试试。</p>
   </section>
 
-  <section>
+  <section class="sec">
     <div class="sec-head">
       <h2>近 7 天提交分布</h2>
       <p>27 个站点有提交，14 个完全静止</p>
     </div>
     <div class="bars">
+<div class="bar-row"><span class="bar-name mono">pages-index</span><span class="bar-track"><span class="bar-fill" style="width:100.0%"></span></span><span class="bar-val mono">5</span></div>
 <div class="bar-row"><span class="bar-name mono">algorithm-enlighten</span><span class="bar-track"><span class="bar-fill" style="width:100.0%"></span></span><span class="bar-val mono">5</span></div>
 <div class="bar-row"><span class="bar-name mono">cpu-enlighten</span><span class="bar-track"><span class="bar-fill" style="width:100.0%"></span></span><span class="bar-val mono">5</span></div>
 <div class="bar-row"><span class="bar-name mono">combinatorial-optimization-game-theory</span><span class="bar-track"><span class="bar-fill" style="width:100.0%"></span></span><span class="bar-val mono">5</span></div>
-<div class="bar-row"><span class="bar-name mono">pages-index</span><span class="bar-track"><span class="bar-fill" style="width:80.0%"></span></span><span class="bar-val mono">4</span></div>
 <div class="bar-row"><span class="bar-name mono">ai-ml-dl-rl-enlighten</span><span class="bar-track"><span class="bar-fill" style="width:60.0%"></span></span><span class="bar-val mono">3</span></div>
 <div class="bar-row"><span class="bar-name mono">math-basics-enlighten</span><span class="bar-track"><span class="bar-fill" style="width:60.0%"></span></span><span class="bar-val mono">3</span></div>
 <div class="bar-row"><span class="bar-name mono">taocp-enlighten</span><span class="bar-track"><span class="bar-fill" style="width:60.0%"></span></span><span class="bar-val mono">3</span></div>
@@ -324,26 +343,27 @@ tbody tr:hover{background:#FBFAF4}
     </div>
   </section>
 
-  <section>
+  <section class="sec">
     <div class="sec-head">
       <h2>未开站的仓库</h2>
-      <p>共 3 个</p>
+      <p>共 3 个，多为 fork 或私有仓库</p>
     </div>
     <ul class="rest">
-<li><a href="https://github.com/zrx-11/deepseek-harness" target="_blank" rel="noopener" class="mono">deepseek-harness</a><span class="rest-desc">DeepSeek 官方 agent harness，fork 自上游，未开 Pages</span><span class="rest-note">fork · 最后推送 2026-10-30 14:54</span></li>
-<li><a href="https://github.com/zrx-11/Pake" target="_blank" rel="noopener" class="mono">Pake</a><span class="rest-desc">把任意网页打包成轻量桌面应用，fork 自上游，未开 Pages</span><span class="rest-note">fork · 最后推送 2026-10-24 08:15</span></li>
-<li><a href="https://github.com/zrx-11/love" target="_blank" rel="noopener" class="mono">love</a><span class="rest-desc">私有仓库，无 README，未开 Pages</span><span class="rest-note">自有仓库 · 最后推送 2026-08-07 00:14 · 私有</span></li>
+<li><span class="rname mono">deepseek-harness</span><span class="rdesc">DeepSeek 官方 agent harness，fork 自上游，未开 Pages</span><span class="rnote">fork 自上游 · 最后推送 2026-10-30 14:54</span></li>
+<li><span class="rname mono">Pake</span><span class="rdesc">把任意网页打包成轻量桌面应用，fork 自上游，未开 Pages</span><span class="rnote">fork 自上游 · 最后推送 2026-10-24 08:15</span></li>
+<li><span class="rname mono">love</span><span class="rdesc">私有仓库，无 README，未开 Pages</span><span class="rnote">自有仓库 · 最后推送 2026-08-07 00:14 · 私有仓库</span></li>
     </ul>
   </section>
 
   <footer class="notes">
-    <b>数据口径</b>：数据来自 GitHub REST API 的 <span class="mono">/user/repos</span>、<span class="mono">/repos/{owner}/{repo}/pages</span>、
-    <span class="mono">/pages/builds/latest</span> 与 <span class="mono">/commits</span> 四个接口，抓取时间 2026-11-09 01:20（周一，UTC+8）；
-    "最近构建"取每个站点最近一次 Pages 构建的完成时间，"近 7 天提交"为过去 7×24 小时内默认分支的提交数量。
-    所有时间已从 UTC 换算为北京时间（UTC+8）。<br>
-    <b>访问检查</b>：对每个站点主页发起一次 HTTP GET，"200"表示返回正常；结果受本地网络影响，偶发超时不代表站点故障。
-    构建耗时、Pages 状态均由 GitHub 返回，未经二次计算。<br>
-    <b>生成方式</b>：本页由本地脚本 <span class="mono">生成报告.py</span> 自动生成，每周一早晨刷新一次；如需即时更新，重新运行该脚本即可覆盖本文件。
+    <p><b>数据口径</b>　仓库清单来自 <span class="mono">/user/repos</span>；站点地址、Pages 状态与部署源来自
+    <span class="mono">/repos/{owner}/{repo}/pages</span>；最近构建的时间、结果与耗时来自
+    <span class="mono">/pages/builds/latest</span>；提交数来自 <span class="mono">/commits</span>。
+    「近 7 天」指过去 7×24 小时默认分支的提交数量。所有时间已由 UTC 换算为北京时间。</p>
+    <p><b>访问检查</b>　对每个站点主页发起一次 HTTP GET，只读前 64KB。<span class="mono">200</span> 表示返回正常，
+    结果受本地网络影响，偶发超时不等于站点故障。构建状态以 GitHub 返回为准，未做二次计算。</p>
+    <p><b>生成方式</b>　由本地脚本 <span class="mono">生成报告.py</span> 生成，每周一刷新并自动更新线上版本；
+    仓库说明取自 <span class="mono">descriptions.json</span>，新增仓库未收录时回退到仓库自带描述。</p>
   </footer>
 
 </div>
@@ -351,8 +371,8 @@ tbody tr:hover{background:#FBFAF4}
 <script>
 (function(){
   var q = document.getElementById('q');
-  var rows = Array.prototype.slice.call(document.querySelectorAll('#rows tr'));
-  var cells = Array.prototype.slice.call(document.querySelectorAll('#matrix [data-name]'));
+  var recs = Array.prototype.slice.call(document.querySelectorAll('#records .rec'));
+  var cells = Array.prototype.slice.call(document.querySelectorAll('.matrix [data-name]'));
   var noHit = document.getElementById('no-hit');
   var mode = 'all';
   var btns = {
@@ -364,21 +384,21 @@ tbody tr:hover{background:#FBFAF4}
   function apply(){
     var kw = (q.value || '').trim().toLowerCase();
     var shown = 0;
-    rows.forEach(function(tr){
-      var name = (tr.getAttribute('data-name') || '').toLowerCase();
-      var addr = (tr.querySelector('.col-addr') ? tr.querySelector('.col-addr').textContent : '').toLowerCase();
-      var hitKw = !kw || name.indexOf(kw) > -1 || addr.indexOf(kw) > -1;
-      var active = tr.getAttribute('data-active') === '1';
-      var hitMode = mode === 'all' || (mode === 'active' && active) || (mode === 'silent' && !active);
+    recs.forEach(function(el){
+      var name = (el.getAttribute('data-name') || '').toLowerCase();
+      var text = (el.textContent || '').toLowerCase();
+      var hitKw = !kw || name.indexOf(kw) > -1 || text.indexOf(kw) > -1;
+      var act = el.getAttribute('data-active') === '1';
+      var hitMode = mode === 'all' || (mode === 'active' && act) || (mode === 'silent' && !act);
       var show = hitKw && hitMode;
-      tr.style.display = show ? '' : 'none';
+      el.style.display = show ? '' : 'none';
       if (show) shown++;
     });
     cells.forEach(function(el){
       var name = (el.getAttribute('data-name') || '').toLowerCase();
-      el.style.opacity = (!kw || name.indexOf(kw) > -1) ? '' : '.35';
+      el.style.opacity = (!kw || name.indexOf(kw) > -1) ? '' : '.3';
     });
-    noHit.hidden = shown > 0;
+    noHit.style.display = shown ? 'none' : 'block';
   }
 
   function setMode(m){
