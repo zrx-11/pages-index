@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GitHub Pages 站点总览 · zrx-11</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23F1F2EC'/%3E%3Crect x='6' y='8' width='8' height='7' fill='%231F4B3F'/%3E%3Crect x='18' y='8' width='8' height='7' fill='%231F4B3F' opacity='.45'/%3E%3Crect x='6' y='18' width='8' height='7' fill='%231F4B3F' opacity='.45'/%3E%3Crect x='18' y='18' width='8' height='7' fill='%231F4B3F'/%3E%3C/svg%3E">
+<style>
+:root{
+  --paper:#F1F2EC; --paper-2:#E7E9E0; --paper-3:#DDE0D4;
+  --ink:#171B18; --ink-2:#4E574F; --ink-3:#7C856F;
+  --line:#C5CAB9; --line-2:#AEB5A2;
+  --pine:#1F4B3F; --amber:#9A6D18; --rose:#8C3A34;
+  --serif:"Songti SC","Noto Serif SC","Source Han Serif SC",STSong,SimSun,serif;
+  --sans:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+  --mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:var(--sans); font-size:15px; line-height:1.55;
+  background-image:linear-gradient(to bottom,rgba(31,75,63,.05),transparent 420px);
+}
+.wrap{max-width:1180px;margin:0 auto;padding:0 18px 64px}
+a{color:var(--pine);text-decoration:none}
+a:hover{text-decoration:underline;text-underline-offset:3px}
+.mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
+
+/* ---------- 顶部 ---------- */
+.top{display:flex;flex-wrap:wrap;gap:8px 16px;justify-content:space-between;
+  padding:14px 0 12px;border-bottom:1px solid var(--line-2);
+  font-family:var(--mono);font-size:12px;letter-spacing:.04em;color:var(--ink-2)}
+.top .mark{color:var(--ink)}
+.top .mark b{font-weight:600}
+
+/* ---------- 导语 ---------- */
+.lead{padding:44px 0 28px;display:grid;gap:26px}
+@media (min-width:900px){.lead{grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);align-items:end;gap:40px}}
+h1{font-family:var(--serif);font-weight:600;font-size:clamp(34px,7vw,58px);
+  line-height:1.06;margin:0;letter-spacing:-.01em}
+.lede{margin:16px 0 0;max-width:34em;font-size:15px;color:var(--ink-2)}
+.lede strong{color:var(--ink);font-weight:600}
+
+/* ---------- 数字 ---------- */
+.figures{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;
+  background:var(--line);border:1px solid var(--line)}
+@media (min-width:620px){.figures{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.fig{background:var(--paper);padding:14px 14px 12px}
+.fig dt{font-size:12px;color:var(--ink-3);letter-spacing:.02em;margin:0 0 6px}
+.fig dd{margin:0;font-family:var(--mono);font-size:clamp(24px,4.6vw,32px);line-height:1;font-weight:600}
+.fig dd small{font-size:12px;font-weight:400;color:var(--ink-3);margin-left:3px}
+
+/* ---------- 矩阵 ---------- */
+.matrix-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;
+  margin:40px 0 12px;border-bottom:1px solid var(--line-2);padding-bottom:8px}
+.matrix-head h2{margin:0;font-family:var(--serif);font-size:19px;font-weight:600}
+.matrix-head span{font-family:var(--mono);font-size:12px;color:var(--ink-3)}
+.matrix{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}
+@media (min-width:700px){.matrix{grid-template-columns:repeat(7,minmax(0,1fr))}}
+.cell{position:relative;display:flex;flex-direction:column;justify-content:space-between;
+  min-height:74px;padding:7px 8px 9px;background:var(--paper-2);
+  border:1px solid var(--line-2);color:var(--ink);overflow:hidden;transition:background .15s,border-color .15s,transform .15s}
+.cell:hover{background:#fff;border-color:var(--pine);text-decoration:none;transform:translateY(-1px)}
+.cell-idx{font-family:var(--mono);font-size:10px;color:var(--ink-3);letter-spacing:.05em}
+.cell-name{font-family:var(--mono);font-size:11px;line-height:1.3;word-break:break-all;color:var(--ink);min-width:0}
+.cell-meta{font-family:var(--mono);font-size:10px;color:var(--ink-3)}
+.cell-bar{position:absolute;left:0;bottom:0;height:3px;width:var(--w,0%);
+  background:var(--pine);opacity:.85}
+.cell-off{background:repeating-linear-gradient(135deg,var(--paper-3) 0 5px,var(--paper-2) 5px 10px);
+  border-style:dashed;color:var(--ink-3)}
+.cell-off .cell-name{color:var(--ink-2)}
+.cell-off .cell-bar{display:none}
+
+/* ---------- 区块 ---------- */
+section{padding-top:40px}
+.sec-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px;
+  border-bottom:1px solid var(--line-2);padding-bottom:8px;margin-bottom:14px}
+.sec-head h2{margin:0;font-family:var(--serif);font-size:19px;font-weight:600}
+.sec-head p{margin:0;font-size:12.5px;color:var(--ink-3)}
+.alert{margin:0 0 16px;padding:10px 12px;border-left:3px solid var(--rose);
+  background:#EFE7E4;font-size:13px;color:#5B2F2B}
+.alert.quiet{border-left-color:var(--pine);background:#E4E9E1;color:#21453B}
+
+/* ---------- 控件 ---------- */
+.controls{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:12px}
+.search{flex:1 1 220px;min-width:0;position:relative}
+.search input{width:100%;font:inherit;font-size:16px;padding:9px 12px;background:#fff;
+  border:1px solid var(--line-2);border-radius:0;color:var(--ink)}
+.search input:focus{outline:2px solid var(--pine);outline-offset:1px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font:inherit;font-size:12.5px;padding:7px 11px;min-height:34px;cursor:pointer;
+  background:transparent;border:1px solid var(--line-2);color:var(--ink-2)}
+.chip[aria-pressed="true"]{background:var(--pine);border-color:var(--pine);color:#F4F6F1}
+.chip:focus-visible{outline:2px solid var(--pine);outline-offset:2px}
+
+/* ---------- 表格 ---------- */
+.table-scroll{overflow-x:auto;border-top:1px solid var(--line-2)}
+table{width:100%;border-collapse:collapse;table-layout:fixed;min-width:660px;font-size:13.5px}
+colgroup col.c1{width:24%} colgroup col.c2{width:31%} colgroup col.c3{width:12%}
+colgroup col.c4{width:13%} colgroup col.c5{width:8%} colgroup col.c6{width:12%}
+thead th{text-align:left;font-weight:500;font-size:12px;color:var(--ink-3);
+  padding:8px 8px;border-bottom:1px solid var(--line);white-space:nowrap}
+tbody td{padding:9px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+tbody tr:hover{background:#FBFAF4}
+.col-name a{font-family:var(--mono);font-size:13px;word-break:break-all;display:block;min-width:0}
+.col-addr .mono{font-size:12px;color:var(--ink-2);word-break:break-all}
+.col-dep .mono{font-size:12px;color:var(--ink-2)}
+.col-time .mono,.col-commit .mono{font-size:12.5px;color:var(--ink-2)}
+.tag{display:inline-block;font-family:var(--mono);font-size:10.5px;line-height:1.6;
+  padding:1px 5px;border:1px solid var(--line-2);color:var(--ink-2);margin:0 4px 3px 0}
+.tag.ok{border-color:#9FB79E;color:#25503F;background:#E6EDE3}
+.tag.warn{border-color:#C9A469;color:#6E4B10;background:#F0E7D6}
+.tag.dim{color:var(--ink-3)}
+
+/* ---------- 活动条 ---------- */
+.bars{display:grid;gap:6px;margin-top:4px}
+.bar-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr) 26px;
+  gap:10px;align-items:center;padding:4px 0;border-bottom:1px dotted var(--line)}
+.bar-name{font-size:11.5px;color:var(--ink);word-break:break-all;min-width:0}
+.bar-track{display:block;height:7px;background:var(--paper-3)}
+.bar-fill{display:block;height:7px;background:var(--pine);opacity:.85}
+.bar-val{font-size:12px;text-align:right;color:var(--ink-2)}
+
+/* ---------- 未部署 ---------- */
+.rest{list-style:none;margin:0;padding:0;display:grid;gap:0}
+.rest li{display:flex;flex-wrap:wrap;gap:4px 12px;align-items:baseline;
+  padding:9px 0;border-bottom:1px solid var(--line)}
+.rest a{font-size:13px}
+.rest-note{font-size:12px;color:var(--ink-3)}
+.empty{color:var(--ink-3);font-size:13px}
+
+/* ---------- 页脚 ---------- */
+.notes{margin-top:48px;padding-top:14px;border-top:1px solid var(--line-2);
+  font-size:12px;color:var(--ink-3);line-height:1.7}
+.notes b{color:var(--ink-2);font-weight:500}
+@media (max-width:520px){
+  body{font-size:14.5px}
+  .wrap{padding:0 14px 48px}
+  table{min-width:600px}
+  .bar-row{grid-template-columns:minmax(0,1fr) 26px}
+  .bar-track{grid-column:1 / -1;order:3}
+}
+@media (prefers-reduced-motion:reduce){.cell{transition:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="top">
+    <div class="mark"><b>zrx-11</b> · GitHub Pages 索引</div>
+    <div>抓取于 2026-11-09 00:35（周一，UTC+8）</div>
+  </header>
+
+  <div class="lead">
+    <div>
+      <h1>站点总览</h1>
+      <p class="lede">名下 <strong>36</strong> 个仓库中，<strong>32</strong> 个已发布为 GitHub Pages 站点，
+      全部构建成功并可访问。最近一次部署发生在 <strong>2026-11-09 00:24</strong>，
+      过去 7 天这些站点共收到 <strong>36</strong> 次提交。剩下的 4 个仓库尚未开站。</p>
+    </div>
+    <dl class="figures">
+      <div class="fig"><dt>已建站仓库</dt><dd>32<small>/ 36</small></dd></div>
+      <div class="fig"><dt>覆盖率</dt><dd>89<small>%</small></dd></div>
+      <div class="fig"><dt>可访问</dt><dd>32<small>/ 32</small></dd></div>
+      <div class="fig"><dt>近 7 天提交</dt><dd>36</dd></div>
+    </dl>
+  </div>
+
+  <div class="matrix-head">
+    <h2>站点矩阵</h2>
+    <span>32 个站点 · 斜纹为未开站 · 右下细条长度=近 7 天提交数（满格 5 次）</span>
+  </div>
+  <div class="matrix" id="matrix">
+<a class="cell" href="https://zrx-11.github.io/mathmap/" target="_blank" rel="noopener" title="zrx-11/mathmap｜已部署｜最近构建 2026-11-09 00:24｜近7天 2 次提交" data-name="mathmap"><span class="cell-idx">01</span><span class="cell-name">mathmap</span><span class="cell-meta">2</span><span class="cell-bar" style="--w:40%"></span></a>
+<a class="cell" href="https://zrx-11.github.io/math-basics-enlighten/" target="_blank" rel="noopener" title="zrx-11/math-basics-enlighten｜已部署｜最近构建 2026-11-09 00:10｜近7天 2 次提交" data-name="math-basics-enlighten"><span class="cell-idx">02</span><span class="cell-name">math-basics-enlighten</span><span class="cell-meta">2</span><span class="cell-bar" style="--w:40%"></span></a>
+<a class="cell" href="https://zrx-11.github.io/agentic-design-patterns-handbook/" target="_blank" rel="noopener" title="zrx-11/agentic-design-patterns-handbook｜已部署｜最近构建 2026-11-09 00:07｜近7天 2 次提交" data-name="agentic-design-patterns-handbook"><span class="cell-idx">03</span><span class="cell-name">agentic-design-patterns-handbook</span><span class="cell-meta">2</span><span class="cell-bar" style="--w:40%"></span></a>
+<a class="cell" href="https://zrx-11.github.io/math-competition-derivation/" target="_blank" rel="noopener" title="zrx-11/math-competition-derivation｜已部署｜最近构建 2026-11-09 00:05｜近7天 1 次提交" data-name="math-competition-derivation"><span class="cell-idx">04</span><span class="cell-name">math-competition-derivation</span><span class="cell-meta">1</span><span class="cell-bar" style="--w:20%"></span></a>
+<a class="cell" href="https://zrx-11.github.io/ai-enlighten/" target="_blank" rel="noopener" title="zrx-11/ai-enlighten｜已部署｜最近构建 2026-11-09 00:01｜近7天 1 次提交" data-name="ai-enlighten"><span class="cell-idx">05</span><span class="cell-name">ai-enlighten</span><span class="cell-meta">1</span><span class="cell-bar" style="--w:20%"></span></a>
+<a class="cell" href="https://zrx-11.github.io/discrete-geometry-enlighten/" target="_blank" rel="noopener" title="zrx-11/discrete-geometry-enlighten｜已部署｜最近构建 2026-11-09 00:01｜近7天 1 次提交" data-name="discrete-geometry-enlighten"><span class="cell-idx">06</span><span class="cell-name">discrete-geometry-enlighten</span><span class="cell-meta">1</span><span class="cell-bar" style="--w:20%"></span></a>
+<a class="cell" href="https://zrx-11.github.io/combinatorial-optimization-game-theory/" target="_blank" rel="noopener" title="zrx-11/combinatorial-optimization-game-theory｜已部署｜最近构建 2026-11-08 23:50｜近7天 5 次提交" data-name="combinatorial-optimization-game-theory"><span class="cell-idx">07</span><span class="cell-name">combinatorial-optimization-game-theory</span><span class="cell-meta">5</span><span class="cell-bar" style="--w:100%"></span></a>
+<a class="cell" href="https://zrx-11.github.io/taocp-enlighten/" target="_blank" rel="noopener" title="zrx-11/taocp-enlighten｜已部署｜最近构建 2026-11-08 23:44｜近7天 3 次提交" data-name="taocp-enlighten"><span class="cell-idx">08</span><span class="cell-name">taocp-enlighten</span><span class="cell-meta">3</span><span class="cell-bar" style="--w:60%"></span></a>
+<a class="cell" href="https://zrx-11.github.io/math-modeling-handbook/" target="_blank" rel="noopener" title="zrx-11/math-modeling-handbook｜已部署｜最近构建 2026-11-08 23:31｜近7天 2 次提交" data-name="math-modeling-handbook"><span class="cell-idx">09</span><span class="cell-name">math-modeling-handbook</span><span class="cell-meta">2</span><span class="cell-bar" style="--w:40%"></span></a>
+<a class="cell" href="https://zrx-11.github.io/first-push-enlighten/" target="_blank" rel="noopener" title="zrx-11/first-push-enlighten｜已部署｜最近构建 2026-11-08 23:28｜近7天 1 次提交" data-name="first-push-enlighten"><span class="cell-idx">10</span><span class="cell-name">first-push-enlighten</span><span class="cell-meta">1</span><span class="cell-bar" style="--w:20%"></span></a>
+<a class="cell" href="https://zrx-11.github.io/economics-principles-handbook/" target="_blank" rel="noopener" title="zrx-11/economics-principles-handbook｜已部署｜最近构建 2026-11-08 23:28｜近7天 1 次提交" data-name="economics-principles-handbook"><span class="cell-idx">11</span><span class="cell-name">economics-principles-handbook</span><span class="cell-meta">1</span><span class="cell-bar" style="--w:20%"></span></a>
+<a class="cell" href="https://zrx-11.github.io/analysis-handbook/" target="_blank" rel="noopener" title="zrx-11/analysis-handbook｜已部署｜最近构建 2026-11-08 23:02｜近7天 2 次提交" data-name="analysis-handbook"><span class="cell-idx">12</span><span class="cell-name">analysis-handbook</span><span class="cell-meta">2</span><span class="cell-bar" style="--w:40%"></span></a>
+<a class="cell" href="https://zrx-11.github.io/gaokao-math/" target="_blank" rel="noopener" title="zrx-11/gaokao-math｜已部署｜最近构建 2026-11-08 22:36｜近7天 2 次提交" data-name="gaokao-math"><span class="cell-idx">13</span><span class="cell-name">gaokao-math</span><span class="cell-meta">2</span><span class="cell-bar" style="--w:40%"></span></a>
+<a class="cell" href="https://zrx-11.github.io/ODE/" target="_blank" rel="noopener" title="zrx-11/ODE｜已部署｜最近构建 2026-11-08 22:26｜近7天 2 次提交" data-name="ODE"><span class="cell-idx">14</span><span class="cell-name">ODE</span><span class="cell-meta">2</span><span class="cell-bar" style="--w:40%"></span></a>
+<a class="cell" href="https://zrx-11.github.io/MATH/" target="_blank" rel="noopener" title="zrx-11/MATH｜已部署｜最近构建 2026-11-08 22:08｜近7天 3 次提交" data-name="MATH"><span class="cell-idx">15</span><span class="cell-name">MATH</span><span class="cell-meta">3</span><span class="cell-bar" style="--w:60%"></span></a>
+<a class="cell" href="https://zrx-11.github.io/show/" target="_blank" rel="noopener" title="zrx-11/show｜已部署｜最近构建 2026-11-04 11:22｜近7天 3 次提交" data-name="show"><span class="cell-idx">16</span><span class="cell-name">show</span><span class="cell-meta">3</span><span class="cell-bar" style="--w:60%"></span></a>
+<a class="cell" href="https://zrx-11.github.io/MATLAB/" target="_blank" rel="noopener" title="zrx-11/MATLAB｜已部署｜最近构建 2026-11-03 16:59｜近7天 2 次提交" data-name="MATLAB"><span class="cell-idx">17</span><span class="cell-name">MATLAB</span><span class="cell-meta">2</span><span class="cell-bar" style="--w:40%"></span></a>
+<a class="cell" href="https://zrx-11.github.io/shallowseek/" target="_blank" rel="noopener" title="zrx-11/shallowseek｜已部署｜最近构建 2026-11-02 23:17｜近7天 1 次提交" data-name="shallowseek"><span class="cell-idx">18</span><span class="cell-name">shallowseek</span><span class="cell-meta">1</span><span class="cell-bar" style="--w:20%"></span></a>
+<a class="cell" href="https://zrx-11.github.io/C-true/" target="_blank" rel="noopener" title="zrx-11/C-true｜已部署｜最近构建 2026-11-01 22:17｜近7天 0 次提交" data-name="C-true"><span class="cell-idx">19</span><span class="cell-name">C-true</span><span class="cell-meta">0</span><span class="cell-bar" style="--w:0%"></span></a>
+<a class="cell" href="https://zrx-11.github.io/C-/" target="_blank" rel="noopener" title="zrx-11/C-｜已部署｜最近构建 2026-11-01 22:10｜近7天 0 次提交" data-name="C-"><span class="cell-idx">20</span><span class="cell-name">C-</span><span class="cell-meta">0</span><span class="cell-bar" style="--w:0%"></span></a>
+<a class="cell" href="https://zrx-11.github.io/math-analysis/" target="_blank" rel="noopener" title="zrx-11/math-analysis｜已部署｜最近构建 2026-10-30 22:41｜近7天 0 次提交" data-name="math-analysis"><span class="cell-idx">21</span><span class="cell-name">math-analysis</span><span class="cell-meta">0</span><span class="cell-bar" style="--w:0%"></span></a>
+<a class="cell" href="https://zrx-11.github.io/transformer/" target="_blank" rel="noopener" title="zrx-11/transformer｜已部署｜最近构建 2026-10-30 10:34｜近7天 0 次提交" data-name="transformer"><span class="cell-idx">22</span><span class="cell-name">transformer</span><span class="cell-meta">0</span><span class="cell-bar" style="--w:0%"></span></a>
+<a class="cell" href="https://zrx-11.github.io/AI-courses/" target="_blank" rel="noopener" title="zrx-11/AI-courses｜已部署｜最近构建 2026-10-26 21:33｜近7天 0 次提交" data-name="AI-courses"><span class="cell-idx">23</span><span class="cell-name">AI-courses</span><span class="cell-meta">0</span><span class="cell-bar" style="--w:0%"></span></a>
+<a class="cell" href="https://zrx-11.github.io/SVM/" target="_blank" rel="noopener" title="zrx-11/SVM｜已部署｜最近构建 2026-10-22 19:04｜近7天 0 次提交" data-name="SVM"><span class="cell-idx">24</span><span class="cell-name">SVM</span><span class="cell-meta">0</span><span class="cell-bar" style="--w:0%"></span></a>
+<a class="cell" href="https://zrx-11.github.io/ACM-XCPC-Notes/" target="_blank" rel="noopener" title="zrx-11/ACM-XCPC-Notes｜已部署｜最近构建 2026-10-21 11:05｜近7天 0 次提交" data-name="ACM-XCPC-Notes"><span class="cell-idx">25</span><span class="cell-name">ACM-XCPC-Notes</span><span class="cell-meta">0</span><span class="cell-bar" style="--w:0%"></span></a>
+<a class="cell" href="https://zrx-11.github.io/ai-history-site/" target="_blank" rel="noopener" title="zrx-11/ai-history-site｜已部署｜最近构建 2026-10-21 10:38｜近7天 0 次提交" data-name="ai-history-site"><span class="cell-idx">26</span><span class="cell-name">ai-history-site</span><span class="cell-meta">0</span><span class="cell-bar" style="--w:0%"></span></a>
+<a class="cell" href="https://zrx-11.github.io/meeting-129600years/" target="_blank" rel="noopener" title="zrx-11/meeting-129600years｜已部署｜最近构建 2026-10-17 23:35｜近7天 0 次提交" data-name="meeting-129600years"><span class="cell-idx">27</span><span class="cell-name">meeting-129600years</span><span class="cell-meta">0</span><span class="cell-bar" style="--w:0%"></span></a>
+<a class="cell" href="https://zrx-11.github.io/matchcampus-demo/" target="_blank" rel="noopener" title="zrx-11/matchcampus-demo｜已部署｜最近构建 2026-10-15 01:04｜近7天 0 次提交" data-name="matchcampus-demo"><span class="cell-idx">28</span><span class="cell-name">matchcampus-demo</span><span class="cell-meta">0</span><span class="cell-bar" style="--w:0%"></span></a>
+<a class="cell" href="https://zrx-11.github.io/AI-Study-Notes/" target="_blank" rel="noopener" title="zrx-11/AI-Study-Notes｜已部署｜最近构建 2026-10-14 23:02｜近7天 0 次提交" data-name="AI-Study-Notes"><span class="cell-idx">29</span><span class="cell-name">AI-Study-Notes</span><span class="cell-meta">0</span><span class="cell-bar" style="--w:0%"></span></a>
+<a class="cell" href="https://zrx-11.github.io/bws-bilingual-reader/" target="_blank" rel="noopener" title="zrx-11/bws-bilingual-reader｜已部署｜最近构建 2026-10-14 22:46｜近7天 0 次提交" data-name="bws-bilingual-reader"><span class="cell-idx">30</span><span class="cell-name">bws-bilingual-reader</span><span class="cell-meta">0</span><span class="cell-bar" style="--w:0%"></span></a>
+<a class="cell" href="https://zrx-11.github.io/CourseVault-OfflineCourseMap/" target="_blank" rel="noopener" title="zrx-11/CourseVault-OfflineCourseMap｜已部署｜最近构建 2026-10-14 22:37｜近7天 0 次提交" data-name="CourseVault-OfflineCourseMap"><span class="cell-idx">31</span><span class="cell-name">CourseVault-OfflineCourseMap</span><span class="cell-meta">0</span><span class="cell-bar" style="--w:0%"></span></a>
+<a class="cell" href="https://zrx-11.github.io/love-page/" target="_blank" rel="noopener" title="zrx-11/love-page｜已部署｜最近构建 2026-08-19 02:52｜近7天 0 次提交" data-name="love-page"><span class="cell-idx">32</span><span class="cell-name">love-page</span><span class="cell-meta">0</span><span class="cell-bar" style="--w:0%"></span></a>
+<div class="cell cell-off" title="zrx-11/ode-enlighten｜未部署｜私有仓库" data-name="ode-enlighten"><span class="cell-idx">33</span><span class="cell-name">ode-enlighten</span><span class="cell-meta">—</span><span class="cell-bar" style="--w:0%"></span></div>
+<div class="cell cell-off" title="zrx-11/deepseek-harness｜未部署｜fork 仓库" data-name="deepseek-harness"><span class="cell-idx">34</span><span class="cell-name">deepseek-harness</span><span class="cell-meta">—</span><span class="cell-bar" style="--w:0%"></span></div>
+<div class="cell cell-off" title="zrx-11/Pake｜未部署｜fork 仓库" data-name="Pake"><span class="cell-idx">35</span><span class="cell-name">Pake</span><span class="cell-meta">—</span><span class="cell-bar" style="--w:0%"></span></div>
+<div class="cell cell-off" title="zrx-11/love｜未部署｜私有仓库" data-name="love"><span class="cell-idx">36</span><span class="cell-name">love</span><span class="cell-meta">—</span><span class="cell-bar" style="--w:0%"></span></div>
+  </div>
+
+  <section>
+    <div class="sec-head">
+      <h2>站点清单</h2>
+      <p>按最近一次构建时间倒序；构建时间为北京时间</p>
+    </div>
+    <p class="alert quiet">本次检查没有异常：所有站点构建成功，全部可访问。</p>
+    <div class="controls">
+      <div class="search"><input id="q" type="search" placeholder="搜索仓库名或地址…" aria-label="搜索仓库"></div>
+      <div class="chips">
+        <button class="chip" id="f-all" aria-pressed="true">全部</button>
+        <button class="chip" id="f-active" aria-pressed="false">本周有更新</button>
+        <button class="chip" id="f-silent" aria-pressed="false">本周无提交</button>
+      </div>
+    </div>
+    <div class="table-scroll">
+      <table>
+        <colgroup><col class="c1"><col class="c2"><col class="c3"><col class="c4"><col class="c5"><col class="c6"></colgroup>
+        <thead>
+          <tr><th>仓库</th><th>站点地址</th><th>部署源</th><th>最近构建</th><th>近7天</th><th>状态 / 访问</th></tr>
+        </thead>
+        <tbody id="rows">
+<tr data-name="mathmap" data-active="1"><td class="col-name"><a href="https://zrx-11.github.io/mathmap/" target="_blank" rel="noopener">mathmap</a></td><td class="col-addr"><span class="mono">zrx-11.github.io/mathmap/</span></td><td class="col-dep"><span class="mono">main:/</span></td><td class="col-time"><span class="mono">11-09 00:24</span></td><td class="col-commit"><span class="mono">2</span></td><td class="col-state"><span class="tag ok">构建成功</span><span class="tag ok">200</span></td></tr>
+<tr data-name="math-basics-enlighten" data-active="1"><td class="col-name"><a href="https://zrx-11.github.io/math-basics-enlighten/" target="_blank" rel="noopener">math-basics-enlighten</a></td><td class="col-addr"><span class="mono">zrx-11.github.io/math-basics-enlighten/</span></td><td class="col-dep"><span class="mono">main:/</span></td><td class="col-time"><span class="mono">11-09 00:10</span></td><td class="col-commit"><span class="mono">2</span></td><td class="col-state"><span class="tag ok">构建成功</span><span class="tag ok">200</span></td></tr>
+<tr data-name="agentic-design-patterns-handbook" data-active="1"><td class="col-name"><a href="https://zrx-11.github.io/agentic-design-patterns-handbook/" target="_blank" rel="noopener">agentic-design-patterns-handbook</a></td><td class="col-addr"><span class="mono">zrx-11.github.io/agentic-design-patterns-handbook/</span></td><td class="col-dep"><span class="mono">main:/</span></td><td class="col-time"><span class="mono">11-09 00:07</span></td><td class="col-commit"><span class="mono">2</span></td><td class="col-state"><span class="tag ok">构建成功</span><span class="tag ok">200</span></td></tr>
+<tr data-name="math-competition-derivation" data-active="1"><td class="col-name"><a href="https://zrx-11.github.io/math-competition-derivation/" target="_blank" rel="noopener">math-competition-derivation</a></td><td class="col-addr"><span class="mono">zrx-11.github.io/math-competition-derivation/</span></td><td class="col-dep"><span class="mono">main:/</span></td><td class="col-time"><span class="mono">11-09 00:05</span></td><td class="col-commit"><span class="mono">1</span></td><td class="col-state"><span class="tag ok">构建成功</span><span class="tag ok">200</span></td></tr>
+<tr data-name="ai-enlighten" data-active="1"><td class="col-name"><a href="https://zrx-11.github.io/ai-enlighten/" target="_blank" rel="noopener">ai-enlighten</a></td><td class="col-addr"><span class="mono">zrx-11.github.io/ai-enlighten/</span></td><td class="col-dep"><span class="mono">main:/</span></td><td class="col-time"><span class="mono">11-09 00:01</span></td><td class="col-commit"><span class="mono">1</span></td><td class="col-state"><span class="tag ok">构建成功</span><span class="tag ok">200</span></td></tr>
+<tr data-name="discrete-geometry-enlighten" data-active="1"><td class="col-name"><a href="https://zrx-11.github.io/discrete-geometry-enlighten/" target="_blank" rel="noopener">discrete-geometry-enlighten</a></td><td class="col-addr"><span class="mono">zrx-11.github.io/discrete-geometry-enlighten/</span></td><td class="col-dep"><span class="mono">main:/</span></td><td class="col-time"><span class="mono">11-09 00:01</span></td><td class="col-commit"><span class="mono">1</span></td><td class="col-state"><span class="tag ok">构建成功</span><span class="tag ok">200</span></td></tr>
+<tr data-name="combinatorial-optimization-game-theory" data-active="1"><td class="col-name"><a href="https://zrx-11.github.io/combinatorial-optimization-game-theory/" target="_blank" rel="noopener">combinatorial-optimization-game-theory</a></td><td class="col-addr"><span class="mono">zrx-11.github.io/combinatorial-optimization-game-theory/</span></td><td class="col-dep"><span class="mono">main:/</span></td><td class="col-time"><span class="mono">11-08 23:50</span></td><td class="col-commit"><span class="mono">5</span></td><td class="col-state"><span class="tag ok">构建成功</span><span class="tag ok">200</span></td></tr>
+<tr data-name="taocp-enlighten" data-active="1"><td class="col-name"><a href="https://zrx-11.github.io/taocp-enlighten/" target="_blank" rel="noopener">taocp-enlighten</a></td><td class="col-addr"><span class="mono">zrx-11.github.io/taocp-enlighten/</span></td><td class="col-dep"><span class="mono">main:/</span></td><td class="col-time"><span class="mono">11-08 23:44</span></td><td class="col-commit"><span class="mono">3</span></td><td class="col-state"><span class="tag ok">构建成功</span><span class="tag ok">200</span></td></tr>
+<tr data-name="math-modeling-handbook" data-active="1"><td class="col-name"><a href="https://zrx-11.github.io/math-modeling-handbook/" target="_blank" rel="noopener">math-modeling-handbook</a></td><td class="col-addr"><span class="mono">zrx-11.github.io/math-modeling-handbook/</span></td><td class="col-dep"><span class="mono">main:/</span></td><td class="col-time"><span class="mono">11-08 23:31</span></td><td class="col-commit"><span class="mono">2</span></td><td class="col-state"><span class="tag ok">构建成功</span><span class="tag ok">200</span></td></tr>
+<tr data-name="first-push-enlighten" data-active="1"><td class="col-name"><a href="https://zrx-11.github.io/first-push-enlighten/" target="_blank" rel="noopener">first-push-enlighten</a></td><td class="col-addr"><span class="mono">zrx-11.github.io/first-push-enlighten/</span></td><td class="col-dep"><span class="mono">main:/</span></td><td class="col-time"><span class="mono">11-08 23:28</span></td><td class="col-commit"><span class="mono">1</span></td><td class="col-state"><span class="tag ok">构建成功</span><span class="tag ok">200</span></td></tr>
+<tr data-name="economics-principles-handbook" data-active="1"><td class="col-name"><a href="https://zrx-11.github.io/economics-principles-handbook/" target="_blank" rel="noopener">economics-principles-handbook</a></td><td class="col-addr"><span class="mono">zrx-11.github.io/economics-principles-handbook/</span></td><td class="col-dep"><span class="mono">main:/</span></td><td class="col-time"><span class="mono">11-08 23:28</span></td><td class="col-commit"><span class="mono">1</span></td><td class="col-state"><span class="tag ok">构建成功</span><span class="tag ok">200</span></td></tr>
+<tr data-name="analysis-handbook" data-active="1"><td class="col-name"><a href="https://zrx-11.github.io/analysis-handbook/" target="_blank" rel="noopener">analysis-handbook</a></td><td class="col-addr"><span class="mono">zrx-11.github.io/analysis-handbook/</span></td><td class="col-dep"><span class="mono">main:/</span></td><td class="col-time"><span class="mono">11-08 23:02</span></td><td class="col-commit"><span class="mono">2</span></td><td class="col-state"><span class="tag ok">构建成功</span><span class="tag ok">200</span></td></tr>
+<tr data-name="gaokao-math" data-active="1"><td class="col-name"><a href="https://zrx-11.github.io/gaokao-math/" target="_blank" rel="noopener">gaokao-math</a></td><td class="col-addr"><span class="mono">zrx-11.github.io/gaokao-math/</span></td><td class="col-dep"><span class="mono">main:/</span></td><td class="col-time"><span class="mono">11-08 22:36</span></td><td class="col-commit"><span class="mono">2</span></td><td class="col-state"><span class="tag ok">构建成功</span><span class="tag ok">200</span></td></tr>
+<tr data-name="ODE" data-active="1"><td class="col-name"><a href="https://zrx-11.github.io/ODE/" target="_blank" rel="noopener">ODE</a></td><td class="col-addr"><span class="mono">zrx-11.github.io/ODE/</span></td><td class="col-dep"><span class="mono">main:/</span></td><td class="col-time"><span class="mono">11-08 22:26</span></td><td class="col-commit"><span class="mono">2</span></td><td class="col-state"><span class="tag ok">构建成功</span><span class="tag ok">200</span></td></tr>
+<tr data-name="MATH" data-active="1"><td class="col-name"><a href="https://zrx-11.github.io/MATH/" target="_blank" rel="noopener">MATH</a></td><td class="col-addr"><span class="mono">zrx-11.github.io/MATH/</span></td><td class="col-dep"><span class="mono">main:/</span></td><td class="col-time"><span class="mono">11-08 22:08</span></td><td class="col-commit"><span class="mono">3</span></td><td class="col-state"><span class="tag ok">构建成功</span><span class="tag ok">200</span></td></tr>
+<tr data-name="show" data-active="1"><td class="col-name"><a href="https://zrx-11.github.io/show/" target="_blank" rel="noopener">show</a></td><td class="col-addr"><span class="mono">zrx-11.github.io/show/</span></td><td class="col-dep"><span class="mono">main:/</span></td><td class="col-time"><span class="mono">11-04 11:22</span></td><td class="col-commit"><span class="mono">3</span></td><td class="col-state"><span class="tag ok">构建成功</span><span class="tag ok">200</span></td></tr>
+<tr data-name="MATLAB" data-active="1"><td class="col-name"><a href="https://zrx-11.github.io/MATLAB/" target="_blank" rel="noopener">MATLAB</a></td><td class="col-addr"><span class="mono">zrx-11.github.io/MATLAB/</span></td><td class="col-dep"><span class="mono">main:/</span></td><td class="col-time"><span class="mono">11-03 16:59</span></td><td class="col-commit"><span class="mono">2</span></td><td class="col-state"><span class="tag ok">构建成功</span><span class="tag ok">200</span></td></tr>
+<tr data-name="shallowseek" data-active="1"><td class="col-name"><a href="https://zrx-11.github.io/shallowseek/" target="_blank" rel="noopener">shallowseek</a></td><td class="col-addr"><span class="mono">zrx-11.github.io/shallowseek/</span></td><td class="col-dep"><span class="mono">main:/</span></td><td class="col-time"><span class="mono">11-02 23:17</span></td><td class="col-commit"><span class="mono">1</span></td><td class="col-state"><span class="tag ok">构建成功</span><span class="tag ok">200</span></td></tr>
+<tr data-name="C-true" data-active="0"><td class="col-name"><a href="https://zrx-11.github.io/C-true/" target="_blank" rel="noopener">C-true</a></td><td class="col-addr"><span class="mono">zrx-11.github.io/C-true/</span></td><td class="col-dep"><span class="mono">main:/</span></td><td class="col-time"><span class="mono">11-01 22:17</span></td><td class="col-commit"><span class="mono">0</span></td><td class="col-state"><span class="tag ok">构建成功</span><span class="tag ok">200</span></td></tr>
+<tr data-name="C-" data-active="0"><td class="col-name"><a href="https://zrx-11.github.io/C-/" target="_blank" rel="noopener">C-</a></td><td class="col-addr"><span class="mono">zrx-11.github.io/C-/</span></td><td class="col-dep"><span class="mono">main:/</span></td><td class="col-time"><span class="mono">11-01 22:10</span></td><td class="col-commit"><span class="mono">0</span></td><td class="col-state"><span class="tag ok">构建成功</span><span class="tag ok">200</span></td></tr>
+<tr data-name="math-analysis" data-active="0"><td class="col-name"><a href="https://zrx-11.github.io/math-analysis/" target="_blank" rel="noopener">math-analysis</a></td><td class="col-addr"><span class="mono">zrx-11.github.io/math-analysis/</span></td><td class="col-dep"><span class="mono">main:/</span></td><td class="col-time"><span class="mono">10-30 22:41</span></td><td class="col-commit"><span class="mono">0</span></td><td class="col-state"><span class="tag ok">构建成功</span><span class="tag ok">200</span></td></tr>
+<tr data-name="transformer" data-active="0"><td class="col-name"><a href="https://zrx-11.github.io/transformer/" target="_blank" rel="noopener">transformer</a></td><td class="col-addr"><span class="mono">zrx-11.github.io/transformer/</span></td><td class="col-dep"><span class="mono">main:/</span></td><td class="col-time"><span class="mono">10-30 10:34</span></td><td class="col-commit"><span class="mono">0</span></td><td class="col-state"><span class="tag ok">构建成功</span><span class="tag ok">200</span></td></tr>
+<tr data-name="AI-courses" data-active="0"><td class="col-name"><a href="https://zrx-11.github.io/AI-courses/" target="_blank" rel="noopener">AI-courses</a></td><td class="col-addr"><span class="mono">zrx-11.github.io/AI-courses/</span></td><td class="col-dep"><span class="mono">main:/</span></td><td class="col-time"><span class="mono">10-26 21:33</span></td><td class="col-commit"><span class="mono">0</span></td><td class="col-state"><span class="tag ok">构建成功</span><span class="tag ok">200</span></td></tr>
+<tr data-name="SVM" data-active="0"><td class="col-name"><a href="https://zrx-11.github.io/SVM/" target="_blank" rel="noopener">SVM</a></td><td class="col-addr"><span class="mono">zrx-11.github.io/SVM/</span></td><td class="col-dep"><span class="mono">main:/</span></td><td class="col-time"><span class="mono">10-22 19:04</span></td><td class="col-commit"><span class="mono">0</span></td><td class="col-state"><span class="tag ok">构建成功</span><span class="tag ok">200</span></td></tr>
+<tr data-name="ACM-XCPC-Notes" data-active="0"><td class="col-name"><a href="https://zrx-11.github.io/ACM-XCPC-Notes/" target="_blank" rel="noopener">ACM-XCPC-Notes</a></td><td class="col-addr"><span class="mono">zrx-11.github.io/ACM-XCPC-Notes/</span></td><td class="col-dep"><span class="mono">main:/</span></td><td class="col-time"><span class="mono">10-21 11:05</span></td><td class="col-commit"><span class="mono">0</span></td><td class="col-state"><span class="tag ok">构建成功</span><span class="tag ok">200</span></td></tr>
+<tr data-name="ai-history-site" data-active="0"><td class="col-name"><a href="https://zrx-11.github.io/ai-history-site/" target="_blank" rel="noopener">ai-history-site</a></td><td class="col-addr"><span class="mono">zrx-11.github.io/ai-history-site/</span></td><td class="col-dep"><span class="mono">main:/</span></td><td class="col-time"><span class="mono">10-21 10:38</span></td><td class="col-commit"><span class="mono">0</span></td><td class="col-state"><span class="tag ok">构建成功</span><span class="tag ok">200</span></td></tr>
+<tr data-name="meeting-129600years" data-active="0"><td class="col-name"><a href="https://zrx-11.github.io/meeting-129600years/" target="_blank" rel="noopener">meeting-129600years</a></td><td class="col-addr"><span class="mono">zrx-11.github.io/meeting-129600years/</span></td><td class="col-dep"><span class="mono">main:/</span></td><td class="col-time"><span class="mono">10-17 23:35</span></td><td class="col-commit"><span class="mono">0</span></td><td class="col-state"><span class="tag ok">构建成功</span><span class="tag ok">200</span></td></tr>
+<tr data-name="matchcampus-demo" data-active="0"><td class="col-name"><a href="https://zrx-11.github.io/matchcampus-demo/" target="_blank" rel="noopener">matchcampus-demo</a></td><td class="col-addr"><span class="mono">zrx-11.github.io/matchcampus-demo/</span></td><td class="col-dep"><span class="mono">main:/</span></td><td class="col-time"><span class="mono">10-15 01:04</span></td><td class="col-commit"><span class="mono">0</span></td><td class="col-state"><span class="tag ok">构建成功</span><span class="tag ok">200</span></td></tr>
+<tr data-name="AI-Study-Notes" data-active="0"><td class="col-name"><a href="https://zrx-11.github.io/AI-Study-Notes/" target="_blank" rel="noopener">AI-Study-Notes</a></td><td class="col-addr"><span class="mono">zrx-11.github.io/AI-Study-Notes/</span></td><td class="col-dep"><span class="mono">main:/</span></td><td class="col-time"><span class="mono">10-14 23:02</span></td><td class="col-commit"><span class="mono">0</span></td><td class="col-state"><span class="tag ok">构建成功</span><span class="tag ok">200</span></td></tr>
+<tr data-name="bws-bilingual-reader" data-active="0"><td class="col-name"><a href="https://zrx-11.github.io/bws-bilingual-reader/" target="_blank" rel="noopener">bws-bilingual-reader</a></td><td class="col-addr"><span class="mono">zrx-11.github.io/bws-bilingual-reader/</span></td><td class="col-dep"><span class="mono">main:/</span></td><td class="col-time"><span class="mono">10-14 22:46</span></td><td class="col-commit"><span class="mono">0</span></td><td class="col-state"><span class="tag ok">构建成功</span><span class="tag ok">200</span></td></tr>
+<tr data-name="CourseVault-OfflineCourseMap" data-active="0"><td class="col-name"><a href="https://zrx-11.github.io/CourseVault-OfflineCourseMap/" target="_blank" rel="noopener">CourseVault-OfflineCourseMap</a></td><td class="col-addr"><span class="mono">zrx-11.github.io/CourseVault-OfflineCourseMap/</span></td><td class="col-dep"><span class="mono">main:/</span></td><td class="col-time"><span class="mono">10-14 22:37</span></td><td class="col-commit"><span class="mono">0</span></td><td class="col-state"><span class="tag ok">构建成功</span><span class="tag ok">200</span></td></tr>
+<tr data-name="love-page" data-active="0"><td class="col-name"><a href="https://zrx-11.github.io/love-page/" target="_blank" rel="noopener">love-page</a></td><td class="col-addr"><span class="mono">zrx-11.github.io/love-page/</span></td><td class="col-dep"><span class="mono">main:/</span></td><td class="col-time"><span class="mono">08-19 02:52</span></td><td class="col-commit"><span class="mono">0</span></td><td class="col-state"><span class="tag ok">构建成功</span><span class="tag ok">200</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="empty" id="no-hit" hidden>没有匹配的站点，换个关键词或筛选条件试试。</p>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <h2>近 7 天提交分布</h2>
+      <p>18 个站点有提交，14 个完全静止</p>
+    </div>
+    <div class="bars">
+<div class="bar-row"><span class="bar-name mono">combinatorial-optimization-game-theory</span><span class="bar-track"><span class="bar-fill" style="width:100.0%"></span></span><span class="bar-val mono">5</span></div>
+<div class="bar-row"><span class="bar-name mono">taocp-enlighten</span><span class="bar-track"><span class="bar-fill" style="width:60.0%"></span></span><span class="bar-val mono">3</span></div>
+<div class="bar-row"><span class="bar-name mono">MATH</span><span class="bar-track"><span class="bar-fill" style="width:60.0%"></span></span><span class="bar-val mono">3</span></div>
+<div class="bar-row"><span class="bar-name mono">show</span><span class="bar-track"><span class="bar-fill" style="width:60.0%"></span></span><span class="bar-val mono">3</span></div>
+<div class="bar-row"><span class="bar-name mono">mathmap</span><span class="bar-track"><span class="bar-fill" style="width:40.0%"></span></span><span class="bar-val mono">2</span></div>
+<div class="bar-row"><span class="bar-name mono">math-basics-enlighten</span><span class="bar-track"><span class="bar-fill" style="width:40.0%"></span></span><span class="bar-val mono">2</span></div>
+<div class="bar-row"><span class="bar-name mono">agentic-design-patterns-handbook</span><span class="bar-track"><span class="bar-fill" style="width:40.0%"></span></span><span class="bar-val mono">2</span></div>
+<div class="bar-row"><span class="bar-name mono">math-modeling-handbook</span><span class="bar-track"><span class="bar-fill" style="width:40.0%"></span></span><span class="bar-val mono">2</span></div>
+<div class="bar-row"><span class="bar-name mono">analysis-handbook</span><span class="bar-track"><span class="bar-fill" style="width:40.0%"></span></span><span class="bar-val mono">2</span></div>
+<div class="bar-row"><span class="bar-name mono">gaokao-math</span><span class="bar-track"><span class="bar-fill" style="width:40.0%"></span></span><span class="bar-val mono">2</span></div>
+<div class="bar-row"><span class="bar-name mono">ODE</span><span class="bar-track"><span class="bar-fill" style="width:40.0%"></span></span><span class="bar-val mono">2</span></div>
+<div class="bar-row"><span class="bar-name mono">MATLAB</span><span class="bar-track"><span class="bar-fill" style="width:40.0%"></span></span><span class="bar-val mono">2</span></div>
+<div class="bar-row"><span class="bar-name mono">math-competition-derivation</span><span class="bar-track"><span class="bar-fill" style="width:20.0%"></span></span><span class="bar-val mono">1</span></div>
+<div class="bar-row"><span class="bar-name mono">ai-enlighten</span><span class="bar-track"><span class="bar-fill" style="width:20.0%"></span></span><span class="bar-val mono">1</span></div>
+<div class="bar-row"><span class="bar-name mono">discrete-geometry-enlighten</span><span class="bar-track"><span class="bar-fill" style="width:20.0%"></span></span><span class="bar-val mono">1</span></div>
+<div class="bar-row"><span class="bar-name mono">first-push-enlighten</span><span class="bar-track"><span class="bar-fill" style="width:20.0%"></span></span><span class="bar-val mono">1</span></div>
+<div class="bar-row"><span class="bar-name mono">economics-principles-handbook</span><span class="bar-track"><span class="bar-fill" style="width:20.0%"></span></span><span class="bar-val mono">1</span></div>
+<div class="bar-row"><span class="bar-name mono">shallowseek</span><span class="bar-track"><span class="bar-fill" style="width:20.0%"></span></span><span class="bar-val mono">1</span></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <h2>未开站的仓库</h2>
+      <p>共 4 个</p>
+    </div>
+    <ul class="rest">
+<li><a href="https://github.com/zrx-11/ode-enlighten" target="_blank" rel="noopener" class="mono">ode-enlighten</a><span class="rest-note">自有仓库 · 最后推送 2026-11-09 00:33</span></li>
+<li><a href="https://github.com/zrx-11/deepseek-harness" target="_blank" rel="noopener" class="mono">deepseek-harness</a><span class="rest-note">fork · 最后推送 2026-10-30 14:54</span></li>
+<li><a href="https://github.com/zrx-11/Pake" target="_blank" rel="noopener" class="mono">Pake</a><span class="rest-note">fork · 最后推送 2026-10-24 08:15</span></li>
+<li><a href="https://github.com/zrx-11/love" target="_blank" rel="noopener" class="mono">love</a><span class="rest-note">自有仓库 · 最后推送 2026-08-07 00:14 · 私有</span></li>
+    </ul>
+  </section>
+
+  <footer class="notes">
+    <b>数据口径</b>：数据来自 GitHub REST API 的 <span class="mono">/user/repos</span>、<span class="mono">/repos/{owner}/{repo}/pages</span>、
+    <span class="mono">/pages/builds/latest</span> 与 <span class="mono">/commits</span> 四个接口，抓取时间 2026-11-09 00:35（周一，UTC+8）；
+    "最近构建"取每个站点最近一次 Pages 构建的完成时间，"近 7 天提交"为过去 7×24 小时内默认分支的提交数量。
+    所有时间已从 UTC 换算为北京时间（UTC+8）。<br>
+    <b>访问检查</b>：对每个站点主页发起一次 HTTP GET，"200"表示返回正常；结果受本地网络影响，偶发超时不代表站点故障。
+    构建耗时、Pages 状态均由 GitHub 返回，未经二次计算。<br>
+    <b>生成方式</b>：本页由本地脚本 <span class="mono">生成报告.py</span> 自动生成，每周一早晨刷新一次；如需即时更新，重新运行该脚本即可覆盖本文件。
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  var q = document.getElementById('q');
+  var rows = Array.prototype.slice.call(document.querySelectorAll('#rows tr'));
+  var cells = Array.prototype.slice.call(document.querySelectorAll('#matrix [data-name]'));
+  var noHit = document.getElementById('no-hit');
+  var mode = 'all';
+  var btns = {
+    all: document.getElementById('f-all'),
+    active: document.getElementById('f-active'),
+    silent: document.getElementById('f-silent')
+  };
+
+  function apply(){
+    var kw = (q.value || '').trim().toLowerCase();
+    var shown = 0;
+    rows.forEach(function(tr){
+      var name = (tr.getAttribute('data-name') || '').toLowerCase();
+      var addr = (tr.querySelector('.col-addr') ? tr.querySelector('.col-addr').textContent : '').toLowerCase();
+      var hitKw = !kw || name.indexOf(kw) > -1 || addr.indexOf(kw) > -1;
+      var active = tr.getAttribute('data-active') === '1';
+      var hitMode = mode === 'all' || (mode === 'active' && active) || (mode === 'silent' && !active);
+      var show = hitKw && hitMode;
+      tr.style.display = show ? '' : 'none';
+      if (show) shown++;
+    });
+    cells.forEach(function(el){
+      var name = (el.getAttribute('data-name') || '').toLowerCase();
+      el.style.opacity = (!kw || name.indexOf(kw) > -1) ? '' : '.35';
+    });
+    noHit.hidden = shown > 0;
+  }
+
+  function setMode(m){
+    mode = m;
+    Object.keys(btns).forEach(function(k){
+      btns[k].setAttribute('aria-pressed', k === m ? 'true' : 'false');
+    });
+    apply();
+  }
+  btns.all.addEventListener('click', function(){ setMode('all'); });
+  btns.active.addEventListener('click', function(){ setMode('active'); });
+  btns.silent.addEventListener('click', function(){ setMode('silent'); });
+  q.addEventListener('input', apply);
+})();
+</script>
+</body>
+</html>
